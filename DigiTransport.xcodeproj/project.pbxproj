@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E81AC0D6249D4E340091B49F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81AC0D5249D4E340091B49F /* HomeViewController.swift */; };
+		52547CC524A9792300E3A27E /* ExitKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */; };
+		52A3871B24A65759003C24F3 /* Custom UIColor Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */; };
+		52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */; };
+		52A3872124A657AE003C24F3 /* View Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 52A3872024A657AE003C24F3 /* View Controllers */; };
+		52A3872424A65D68003C24F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3872324A65D68003C24F3 /* LoginViewController.swift */; };
+		52C3BB0A24A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB0924A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift */; };
+		52C3BB0D24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */; };
+		52C3BB1324A9401600B4D35E /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1224A9401600B4D35E /* ThemeProtocol.swift */; };
+		52C3BB1524A9402800B4D35E /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1424A9402800B4D35E /* DarkTheme.swift */; };
+		52C3BB1724A9403600B4D35E /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1624A9403600B4D35E /* LightTheme.swift */; };
+		52C3BB1924A941CC00B4D35E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1824A941CC00B4D35E /* Theme.swift */; };
 		E85D4B65249D466F00A30864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D4B64249D466F00A30864 /* AppDelegate.swift */; };
 		E85D4B67249D466F00A30864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D4B66249D466F00A30864 /* SceneDelegate.swift */; };
-		E85D4B69249D466F00A30864 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D4B68249D466F00A30864 /* ViewController.swift */; };
 		E85D4B6C249D466F00A30864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6A249D466F00A30864 /* Main.storyboard */; };
 		E85D4B6E249D467100A30864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6D249D467100A30864 /* Assets.xcassets */; };
 		E85D4B71249D467100A30864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6F249D467100A30864 /* LaunchScreen.storyboard */; };
-		E991FA48249D534B00170076 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991FA47249D534B00170076 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E81AC0D5249D4E340091B49F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitKeyboardOnTap.swift; sourceTree = "<group>"; };
+		52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom UIColor Colors.swift"; sourceTree = "<group>"; };
+		52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Hex to RGB.swift"; sourceTree = "<group>"; };
+		52A3872024A657AE003C24F3 /* View Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "View Controllers"; sourceTree = "<group>"; };
+		52A3872324A65D68003C24F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		52C3BB0924A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI Button Image on Left Text in Center.swift"; sourceTree = "<group>"; };
+		52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single Line (instead of box) Text Field.swift"; sourceTree = "<group>"; };
+		52C3BB1224A9401600B4D35E /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		52C3BB1424A9402800B4D35E /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		52C3BB1624A9403600B4D35E /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		52C3BB1824A941CC00B4D35E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E85D4B61249D466F00A30864 /* DigiTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85D4B64249D466F00A30864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85D4B66249D466F00A30864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E85D4B68249D466F00A30864 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E85D4B6B249D466F00A30864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E85D4B6D249D467100A30864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E85D4B70249D467100A30864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E85D4B72249D467100A30864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E991FA47249D534B00170076 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +57,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52547CC324A9790400E3A27E /* UI View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */,
+			);
+			path = "UI View Controller";
+			sourceTree = "<group>";
+		};
+		52A3871E24A65768003C24F3 /* Custom colors */ = {
+			isa = PBXGroup;
+			children = (
+				52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */,
+				52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */,
+				52C3BB1824A941CC00B4D35E /* Theme.swift */,
+				52C3BB1224A9401600B4D35E /* ThemeProtocol.swift */,
+				52C3BB1624A9403600B4D35E /* LightTheme.swift */,
+				52C3BB1424A9402800B4D35E /* DarkTheme.swift */,
+			);
+			path = "Custom colors";
+			sourceTree = "<group>";
+		};
+		52A3872224A657D7003C24F3 /* Class Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52547CC324A9790400E3A27E /* UI View Controller */,
+				52C3BB0B24A6AA3000B4D35E /* UI Text Field */,
+				52C3BB0824A65F7200B4D35E /* UI Buttons */,
+				52A3871E24A65768003C24F3 /* Custom colors */,
+			);
+			path = "Class Extensions";
+			sourceTree = "<group>";
+		};
+		52C3BB0824A65F7200B4D35E /* UI Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				52C3BB0924A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift */,
+			);
+			path = "UI Buttons";
+			sourceTree = "<group>";
+		};
+		52C3BB0B24A6AA3000B4D35E /* UI Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */,
+			);
+			path = "UI Text Field";
+			sourceTree = "<group>";
+		};
 		E85D4B58249D466F00A30864 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +124,15 @@
 		E85D4B63249D466F00A30864 /* DigiTransport */ = {
 			isa = PBXGroup;
 			children = (
-				E81AC0D5249D4E340091B49F /* HomeViewController.swift */,
+				52A3872024A657AE003C24F3 /* View Controllers */,
 				E85D4B64249D466F00A30864 /* AppDelegate.swift */,
+				52A3872324A65D68003C24F3 /* LoginViewController.swift */,
 				E85D4B66249D466F00A30864 /* SceneDelegate.swift */,
-				E85D4B68249D466F00A30864 /* ViewController.swift */,
 				E85D4B6A249D466F00A30864 /* Main.storyboard */,
 				E85D4B6D249D467100A30864 /* Assets.xcassets */,
 				E85D4B6F249D467100A30864 /* LaunchScreen.storyboard */,
 				E85D4B72249D467100A30864 /* Info.plist */,
-				E991FA47249D534B00170076 /* SignInViewController.swift */,
+				52A3872224A657D7003C24F3 /* Class Extensions */,
 			);
 			path = DigiTransport;
 			sourceTree = "<group>";
@@ -133,6 +197,7 @@
 			files = (
 				E85D4B71249D467100A30864 /* LaunchScreen.storyboard in Resources */,
 				E85D4B6E249D467100A30864 /* Assets.xcassets in Resources */,
+				52A3872124A657AE003C24F3 /* View Controllers in Resources */,
 				E85D4B6C249D466F00A30864 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,11 +209,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85D4B69249D466F00A30864 /* ViewController.swift in Sources */,
+				52A3871B24A65759003C24F3 /* Custom UIColor Colors.swift in Sources */,
+				52C3BB0A24A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift in Sources */,
+				52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */,
+				52C3BB1324A9401600B4D35E /* ThemeProtocol.swift in Sources */,
+				52C3BB1924A941CC00B4D35E /* Theme.swift in Sources */,
+				52C3BB1724A9403600B4D35E /* LightTheme.swift in Sources */,
+				52C3BB1524A9402800B4D35E /* DarkTheme.swift in Sources */,
+				52547CC524A9792300E3A27E /* ExitKeyboardOnTap.swift in Sources */,
 				E85D4B65249D466F00A30864 /* AppDelegate.swift in Sources */,
+				52A3872424A65D68003C24F3 /* LoginViewController.swift in Sources */,
+				52C3BB0D24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift in Sources */,
 				E85D4B67249D466F00A30864 /* SceneDelegate.swift in Sources */,
-				E991FA48249D534B00170076 /* SignInViewController.swift in Sources */,
-				E81AC0D6249D4E340091B49F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +365,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6WUS7R97A;
 				INFOPLIST_FILE = DigiTransport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +384,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6WUS7R97A;
 				INFOPLIST_FILE = DigiTransport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
