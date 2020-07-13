@@ -1,0 +1,48 @@
+
+/* Class = "UITextField"; placeholder = "Enter registered use id*"; ObjectID = "5rT-pd-KpL"; */
+"5rT-pd-KpL.placeholder" = "Enter registered use id*";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "Cif-nD-LzL"; */
+"Cif-nD-LzL.normalTitle" = "Reset Password";
+
+/* Class = "UILabel"; text = "Powered by R S InfoCon"; ObjectID = "GcF-jH-tEn"; */
+"GcF-jH-tEn.text" = "Powered by R S InfoCon";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "I7X-cD-CRX"; */
+"I7X-cD-CRX.title" = "Login";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Igl-xE-J1Q"; */
+"Igl-xE-J1Q.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Forgot Password"; ObjectID = "NIe-rs-DOP"; */
+"NIe-rs-DOP.title" = "Forgot Password";
+
+/* Class = "UITextField"; placeholder = "Career UserID"; ObjectID = "VRz-GX-JHh"; */
+"VRz-GX-JHh.placeholder" = "Career UserID";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "Vg9-YJ-Tq0"; */
+"Vg9-YJ-Tq0.normalTitle" = "Log In";
+
+/* Class = "UILabel"; text = "Login "; ObjectID = "Xwb-Gg-7EI"; */
+"Xwb-Gg-7EI.text" = "Login ";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "aLw-Cr-oU3"; */
+"aLw-Cr-oU3.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Enter registered use id*"; ObjectID = "dgA-t3-eZB"; */
+"dgA-t3-eZB.placeholder" = "Enter registered use id*";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "l9J-sM-NGi"; */
+"l9J-sM-NGi.normalTitle" = "Forgot Password?";
+
+/* Class = "UILabel"; text = "Enter your User ID to receive a code to reset your password."; ObjectID = "t0m-vq-Hwg"; */
+"t0m-vq-Hwg.text" = "Enter your User ID to receive a code to reset your password.";
+
+/* Class = "UILabel"; text = "I agree and accept DigiTransport Agreement, Private Policy, and Terms of Use "; ObjectID = "tcM-ay-hl4"; */
+"tcM-ay-hl4.text" = "I agree and accept DigiTransport Agreement, Private Policy, and Terms of Use ";
+
+/* Class = "UIButton"; normalTitle = "Resend Code"; ObjectID = "yLW-bc-eni"; */
+"yLW-bc-eni.normalTitle" = "Resend Code";
+
+/* Class = "UIButton"; normalTitle = "Back to Login Screen"; ObjectID = "yM6-en-xsX"; */
+"yM6-en-xsX.normalTitle" = "Back to Login Screen";
