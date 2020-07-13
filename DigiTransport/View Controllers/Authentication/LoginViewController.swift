@@ -7,10 +7,12 @@
 //
 import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var loginField: UITextField!
 
-
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    @IBOutlet var passwordField: UITextField!
 
 
     @IBOutlet weak var backgroundView: UIView!
@@ -23,23 +25,48 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotPassword: UIButton!
 
 
-    @IBOutlet var agreementPolicy: UILabel!
+    @IBOutlet weak var agreementPolicy: UILabel!
 
-    @IBOutlet var poweredBy: UILabel!
-
-
-
-
-
+    @IBOutlet weak var poweredBy: UILabel!
+    
+    var userStyle = ""
+    
     override func viewDidLoad() {
+        print(userStyle)
         super.viewDidLoad()
+        print(getFaceIDDefaults())
+        if getAutoLogin() {
+        if AuthController.isSignedIn {
+        if getFaceIDDefaults() {
+        let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+        authenticationWithBiometrics(ViewController: secondVC)
+        } else {
+            let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }
+        }
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        applyThemeDefault()
+        passwordField.showhidepasswordbutton()
         self.hideKeyboardWhenTappedAround()
-
+        self.ScrollUpFromKeyboard()
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
         loginField.delegate = self
         loginField.tag = 0
 
         passwordField.delegate = self
         passwordField.tag = 1
+        
+
+        
 
 //      SETTING BOTTOM LINE (INSTEAD OF BOX) FOR UITEXTFIELD
         loginField.setBottomBorder(color: UIColor.systemGray2)
@@ -53,107 +80,88 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         applyTheme()
 
+          
+
+
 
     }
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
+    }
+    
 
     struct myImages {
         static let loginImage = UIImage(systemName: "person")!
         static let passwordImage = UIImage(systemName: "lock")!
+        
     }
-
-    func addImagetoField(textField: UITextField, andImage image: UIImage) {
-
-        let leftImageView = UIImageView(frame:CGRect(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height))
-        leftImageView.image = image
-
-        let leftImageView1 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: image.size.width + 5, height: image.size.height))
-        leftImageView1.addSubview(leftImageView)
-
-        textField.leftView = leftImageView1
-
-        textField.leftViewMode = .always
-
-    }
-
 
 
     fileprivate func applyTheme() {
         backgroundView.backgroundColor = Theme.current.backgroundColor
-        topSpacer.backgroundColor = Theme.current.backgroundColor
+        topSpacer.alpha = 0.0
         bottomSpacer.backgroundColor = Theme.current.backgroundColor
         forgotPassword.backgroundColor = Theme.current.backgroundColor
         loginField.backgroundColor = Theme.current.backgroundColor
         passwordField.backgroundColor = Theme.current.backgroundColor
         poweredBy.backgroundColor = Theme.current.backgroundColor
         agreementPolicy.backgroundColor = Theme.current.backgroundColor
-        forgotPassword.setTitleColor(Theme.current.grayWhite, for:.normal)
+        forgotPassword.setTitleColor(Theme.current.grays, for:.normal)
         loginField.textColor = Theme.current.textColor
         passwordField.textColor = Theme.current.textColor
         poweredBy.textColor = Theme.current.grays
         agreementPolicy.textColor = Theme.current.grayWhite
         loginField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
         passwordField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
-        if Theme.current.textColor == UIColor.black {
-            if isDarkStatusBar == false {
-            isDarkStatusBar.toggle()
-            }
-        }
-        if Theme.current.textColor == UIColor.white {
-            if isDarkStatusBar == true {
-            isDarkStatusBar.toggle()
-            }
-        }
-
-        }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return isDarkStatusBar ? .darkContent : .lightContent
-
+        backgroundImage.image = Theme.current.digitransportLogo
+       
+        
     }
 
-    var isDarkStatusBar = false {
-        didSet {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }
-    }
 
+        
+        
+
+    
     @IBAction func loginButton(sender: UIButton) {
         loginPressed()
     }
 
 
     func loginPressed() {
-        let login = loginField.text
-        let password = passwordField.text
-        if login == "shamit" {
-            if password == "dark" {
-                Theme.current = DarkTheme()
-                passwordField.text = "light"
-            }
-            if password == "light" {
-                Theme.current = LightTheme()
-                passwordField.text = "dark"
+        guard let email = loginField.text, email.count > 0 else {
+            return
+          }
+          guard let password = passwordField.text, password.count > 0 else {
+            return
+          }
+          
+          let name = UIDevice.current.name
+          let user = User(name: name, email: email)
+          
+          do {
+            try AuthController.signIn(user, password: password)
 
-            }
-
-        }
-        applyTheme()
-
-
+            let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+            self.navigationController?.pushViewController(secondVC, animated: true)
+          } catch {
+            print("Error signing in: \(error.localizedDescription)")
+          }
     }
-
-
+    
      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
          // Try to find next responder
          if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
          } else {
             // Not found, so remove keyboard.
+            textField.resignFirstResponder()
             loginPressed()
          }
          // Do not add a line break
          return false
       }
-
+    
 }

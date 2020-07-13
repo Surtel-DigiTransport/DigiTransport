@@ -7,42 +7,91 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52291C1124B8B410004BB24E /* CommunicationPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52291C1024B8B410004BB24E /* CommunicationPage.storyboard */; };
+		52291C1424B8B48A004BB24E /* CommunicationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1324B8B48A004BB24E /* CommunicationPage.swift */; };
+		52291C1824B8BE52004BB24E /* CommunicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1724B8BE52004BB24E /* CommunicationController.swift */; };
+		52291C1C24B8C0DE004BB24E /* CommunicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1B24B8C0DE004BB24E /* CommunicationCell.swift */; };
+		52291C1E24B92312004BB24E /* CommunicationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1D24B92312004BB24E /* CommunicationDetails.swift */; };
+		52291C2024B97D6C004BB24E /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1F24B97D6C004BB24E /* SecurityViewController.swift */; };
+		52291C2224B97D83004BB24E /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C2124B97D83004BB24E /* ThemeViewController.swift */; };
 		52547CC524A9792300E3A27E /* ExitKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */; };
+		525FFC4924AC529700C1E08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525FFC4724AC529700C1E08D /* LaunchScreen.storyboard */; };
+		525FFC5224ACE5C600C1E08D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC5124ACE5C600C1E08D /* LoginViewController.swift */; };
+		525FFC5524ACE77C00C1E08D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC5424ACE77C00C1E08D /* SignInViewController.swift */; };
+		525FFC5724ACE77F00C1E08D /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC5624ACE77F00C1E08D /* HomePageViewController.swift */; };
+		525FFC5C24ACEB0B00C1E08D /* ShamitMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525FFC5A24ACEB0B00C1E08D /* ShamitMain.storyboard */; };
+		525FFC6024AD04FD00C1E08D /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525FFC5F24AD04FD00C1E08D /* HomePage.storyboard */; };
+		525FFC6224AD3EB100C1E08D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC6124AD3EB100C1E08D /* ForgotPasswordViewController.swift */; };
+		525FFC6424AE207800C1E08D /* AddImageToTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC6324AE207800C1E08D /* AddImageToTextField.swift */; };
+		525FFC6624AE2F0F00C1E08D /* SpecificBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC6524AE2F0F00C1E08D /* SpecificBackgroundColor.swift */; };
+		525FFC6924AEB36200C1E08D /* basicjailbreakdetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FFC6824AEB36200C1E08D /* basicjailbreakdetection.swift */; };
+		5276873B24B76539006BDE26 /* BiometricLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276873A24B76539006BDE26 /* BiometricLogin.swift */; };
+		5276874724B77D34006BDE26 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874624B77D34006BDE26 /* SettingsViewController.swift */; };
+		5276874924B77D56006BDE26 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5276874824B77D56006BDE26 /* Settings.storyboard */; };
+		5276874C24B7CE98006BDE26 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874B24B7CE98006BDE26 /* KeychainController.swift */; };
+		5276874E24B7DC8B006BDE26 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874D24B7DC8B006BDE26 /* AuthController.swift */; };
+		5276875024B7DCF4006BDE26 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874F24B7DCF4006BDE26 /* User.swift */; };
+		5276875224B7DD2B006BDE26 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276875124B7DD2B006BDE26 /* Settings.swift */; };
 		52A3871B24A65759003C24F3 /* Custom UIColor Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */; };
 		52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */; };
-		52A3872124A657AE003C24F3 /* View Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 52A3872024A657AE003C24F3 /* View Controllers */; };
-		52A3872424A65D68003C24F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3872324A65D68003C24F3 /* LoginViewController.swift */; };
 		52C3BB0A24A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB0924A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift */; };
 		52C3BB0D24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */; };
 		52C3BB1324A9401600B4D35E /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1224A9401600B4D35E /* ThemeProtocol.swift */; };
 		52C3BB1524A9402800B4D35E /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1424A9402800B4D35E /* DarkTheme.swift */; };
 		52C3BB1724A9403600B4D35E /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1624A9403600B4D35E /* LightTheme.swift */; };
 		52C3BB1924A941CC00B4D35E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3BB1824A941CC00B4D35E /* Theme.swift */; };
+		52C907B224B0ED580060DF1B /* UITextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C907B124B0ED580060DF1B /* UITextFieldButton.swift */; };
+		52C907B424B1466B0060DF1B /* HideShowPasswordFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C907B324B1466B0060DF1B /* HideShowPasswordFix.swift */; };
+		52C907B924B2419D0060DF1B /* ScrollUpFromKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C907B824B2419D0060DF1B /* ScrollUpFromKeyboard.swift */; };
+		52C907BD24B62F030060DF1B /* Theme Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C907BC24B62F030060DF1B /* Theme Defaults.swift */; };
 		E85D4B65249D466F00A30864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D4B64249D466F00A30864 /* AppDelegate.swift */; };
 		E85D4B67249D466F00A30864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D4B66249D466F00A30864 /* SceneDelegate.swift */; };
-		E85D4B6C249D466F00A30864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6A249D466F00A30864 /* Main.storyboard */; };
 		E85D4B6E249D467100A30864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6D249D467100A30864 /* Assets.xcassets */; };
-		E85D4B71249D467100A30864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85D4B6F249D467100A30864 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52291C1024B8B410004BB24E /* CommunicationPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunicationPage.storyboard; sourceTree = "<group>"; };
+		52291C1324B8B48A004BB24E /* CommunicationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationPage.swift; sourceTree = "<group>"; };
+		52291C1724B8BE52004BB24E /* CommunicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationController.swift; sourceTree = "<group>"; };
+		52291C1B24B8C0DE004BB24E /* CommunicationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationCell.swift; sourceTree = "<group>"; };
+		52291C1D24B92312004BB24E /* CommunicationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationDetails.swift; sourceTree = "<group>"; };
+		52291C1F24B97D6C004BB24E /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
+		52291C2124B97D83004BB24E /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitKeyboardOnTap.swift; sourceTree = "<group>"; };
+		525FFC4824AC529700C1E08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		525FFC5124ACE5C600C1E08D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		525FFC5424ACE77C00C1E08D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = "DigiTransport/View Controllers/Authentication/SignInViewController.swift"; sourceTree = SOURCE_ROOT; };
+		525FFC5624ACE77F00C1E08D /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePageViewController.swift; path = "DigiTransport/View Controllers/Home Page/HomePageViewController.swift"; sourceTree = SOURCE_ROOT; };
+		525FFC5B24ACEB0B00C1E08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShamitMain.storyboard; sourceTree = "<group>"; };
+		525FFC5F24AD04FD00C1E08D /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		525FFC6124AD3EB100C1E08D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		525FFC6324AE207800C1E08D /* AddImageToTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageToTextField.swift; sourceTree = "<group>"; };
+		525FFC6524AE2F0F00C1E08D /* SpecificBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificBackgroundColor.swift; sourceTree = "<group>"; };
+		525FFC6824AEB36200C1E08D /* basicjailbreakdetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicjailbreakdetection.swift; sourceTree = "<group>"; };
+		5276873A24B76539006BDE26 /* BiometricLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin.swift; sourceTree = "<group>"; };
+		5276873D24B765E4006BDE26 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		5276874624B77D34006BDE26 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5276874824B77D56006BDE26 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		5276874B24B7CE98006BDE26 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
+		5276874D24B7DC8B006BDE26 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		5276874F24B7DCF4006BDE26 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../Downloads/Friendvatars/Friendvatars-Final/Friendvatars/User.swift"; sourceTree = "<group>"; };
+		5276875124B7DD2B006BDE26 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "../../../../../Downloads/Friendvatars/Friendvatars-Final/Friendvatars/Settings.swift"; sourceTree = "<group>"; };
 		52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom UIColor Colors.swift"; sourceTree = "<group>"; };
 		52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Hex to RGB.swift"; sourceTree = "<group>"; };
-		52A3872024A657AE003C24F3 /* View Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "View Controllers"; sourceTree = "<group>"; };
-		52A3872324A65D68003C24F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		52C3BB0924A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI Button Image on Left Text in Center.swift"; sourceTree = "<group>"; };
 		52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single Line (instead of box) Text Field.swift"; sourceTree = "<group>"; };
 		52C3BB1224A9401600B4D35E /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		52C3BB1424A9402800B4D35E /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		52C3BB1624A9403600B4D35E /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		52C3BB1824A941CC00B4D35E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		52C907B124B0ED580060DF1B /* UITextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldButton.swift; sourceTree = "<group>"; };
+		52C907B324B1466B0060DF1B /* HideShowPasswordFix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideShowPasswordFix.swift; sourceTree = "<group>"; };
+		52C907B824B2419D0060DF1B /* ScrollUpFromKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollUpFromKeyboard.swift; sourceTree = "<group>"; };
+		52C907BC24B62F030060DF1B /* Theme Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme Defaults.swift"; sourceTree = "<group>"; };
 		E85D4B61249D466F00A30864 /* DigiTransport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiTransport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85D4B64249D466F00A30864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85D4B66249D466F00A30864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E85D4B6B249D466F00A30864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E85D4B6D249D467100A30864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E85D4B70249D467100A30864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E85D4B72249D467100A30864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,12 +106,127 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52291C1224B8B451004BB24E /* Communcation Page */ = {
+			isa = PBXGroup;
+			children = (
+				52291C1324B8B48A004BB24E /* CommunicationPage.swift */,
+				52291C1D24B92312004BB24E /* CommunicationDetails.swift */,
+				52291C1B24B8C0DE004BB24E /* CommunicationCell.swift */,
+			);
+			path = "Communcation Page";
+			sourceTree = "<group>";
+		};
+		52291C1524B8BE0C004BB24E /* Biometric */ = {
+			isa = PBXGroup;
+			children = (
+				5276873A24B76539006BDE26 /* BiometricLogin.swift */,
+			);
+			path = Biometric;
+			sourceTree = "<group>";
+		};
+		52291C1624B8BE31004BB24E /* Communication Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52291C1724B8BE52004BB24E /* CommunicationController.swift */,
+			);
+			path = "Communication Controller";
+			sourceTree = "<group>";
+		};
 		52547CC324A9790400E3A27E /* UI View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				52547CC424A9792300E3A27E /* ExitKeyboardOnTap.swift */,
+				525FFC6524AE2F0F00C1E08D /* SpecificBackgroundColor.swift */,
+				52C907B824B2419D0060DF1B /* ScrollUpFromKeyboard.swift */,
 			);
 			path = "UI View Controller";
+			sourceTree = "<group>";
+		};
+		525FFC5324ACE75100C1E08D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52291C1224B8B451004BB24E /* Communcation Page */,
+				5276874524B77D04006BDE26 /* Home Page */,
+				5276874424B77CF9006BDE26 /* Settings */,
+				5276874324B77CE8006BDE26 /* Authentication */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		525FFC6724AEB34B00C1E08D /* Jailbreak Detection (No use currently) */ = {
+			isa = PBXGroup;
+			children = (
+				525FFC6824AEB36200C1E08D /* basicjailbreakdetection.swift */,
+			);
+			path = "Jailbreak Detection (No use currently)";
+			sourceTree = "<group>";
+		};
+		525FFC6A24AEE87300C1E08D /* HideShowPasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				52C907B124B0ED580060DF1B /* UITextFieldButton.swift */,
+				52C907B324B1466B0060DF1B /* HideShowPasswordFix.swift */,
+			);
+			path = HideShowPasswordTextField;
+			sourceTree = "<group>";
+		};
+		5276873C24B765E3006BDE26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5276873D24B765E4006BDE26 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5276874224B77CD9006BDE26 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				525FFC4724AC529700C1E08D /* LaunchScreen.storyboard */,
+				52291C1024B8B410004BB24E /* CommunicationPage.storyboard */,
+				525FFC5A24ACEB0B00C1E08D /* ShamitMain.storyboard */,
+				525FFC5F24AD04FD00C1E08D /* HomePage.storyboard */,
+				5276874824B77D56006BDE26 /* Settings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5276874324B77CE8006BDE26 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				525FFC5424ACE77C00C1E08D /* SignInViewController.swift */,
+				525FFC5124ACE5C600C1E08D /* LoginViewController.swift */,
+				525FFC6124AD3EB100C1E08D /* ForgotPasswordViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		5276874424B77CF9006BDE26 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5276874624B77D34006BDE26 /* SettingsViewController.swift */,
+				52291C1F24B97D6C004BB24E /* SecurityViewController.swift */,
+				52291C2124B97D83004BB24E /* ThemeViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5276874524B77D04006BDE26 /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				525FFC5624ACE77F00C1E08D /* HomePageViewController.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
+		5276874A24B7CE83006BDE26 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5276874F24B7DCF4006BDE26 /* User.swift */,
+				5276874B24B7CE98006BDE26 /* KeychainController.swift */,
+				5276874D24B7DC8B006BDE26 /* AuthController.swift */,
+				5276875124B7DD2B006BDE26 /* Settings.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		52A3871E24A65768003C24F3 /* Custom colors */ = {
@@ -81,6 +245,12 @@
 		52A3872224A657D7003C24F3 /* Class Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				52291C1624B8BE31004BB24E /* Communication Controller */,
+				52291C1524B8BE0C004BB24E /* Biometric */,
+				5276874A24B7CE83006BDE26 /* Authentication */,
+				52C907BB24B62EE70060DF1B /* User Defaults */,
+				525FFC6A24AEE87300C1E08D /* HideShowPasswordTextField */,
+				525FFC6724AEB34B00C1E08D /* Jailbreak Detection (No use currently) */,
 				52547CC324A9790400E3A27E /* UI View Controller */,
 				52C3BB0B24A6AA3000B4D35E /* UI Text Field */,
 				52C3BB0824A65F7200B4D35E /* UI Buttons */,
@@ -100,9 +270,18 @@
 		52C3BB0B24A6AA3000B4D35E /* UI Text Field */ = {
 			isa = PBXGroup;
 			children = (
+				525FFC6324AE207800C1E08D /* AddImageToTextField.swift */,
 				52C3BB0C24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift */,
 			);
 			path = "UI Text Field";
+			sourceTree = "<group>";
+		};
+		52C907BB24B62EE70060DF1B /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				52C907BC24B62F030060DF1B /* Theme Defaults.swift */,
+			);
+			path = "User Defaults";
 			sourceTree = "<group>";
 		};
 		E85D4B58249D466F00A30864 = {
@@ -110,6 +289,7 @@
 			children = (
 				E85D4B63249D466F00A30864 /* DigiTransport */,
 				E85D4B62249D466F00A30864 /* Products */,
+				5276873C24B765E3006BDE26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,13 +304,11 @@
 		E85D4B63249D466F00A30864 /* DigiTransport */ = {
 			isa = PBXGroup;
 			children = (
-				52A3872024A657AE003C24F3 /* View Controllers */,
 				E85D4B64249D466F00A30864 /* AppDelegate.swift */,
-				52A3872324A65D68003C24F3 /* LoginViewController.swift */,
+				525FFC5324ACE75100C1E08D /* View Controllers */,
+				5276874224B77CD9006BDE26 /* Storyboards */,
 				E85D4B66249D466F00A30864 /* SceneDelegate.swift */,
-				E85D4B6A249D466F00A30864 /* Main.storyboard */,
 				E85D4B6D249D467100A30864 /* Assets.xcassets */,
-				E85D4B6F249D467100A30864 /* LaunchScreen.storyboard */,
 				E85D4B72249D467100A30864 /* Info.plist */,
 				52A3872224A657D7003C24F3 /* Class Extensions */,
 			);
@@ -195,10 +373,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85D4B71249D467100A30864 /* LaunchScreen.storyboard in Resources */,
+				52291C1124B8B410004BB24E /* CommunicationPage.storyboard in Resources */,
+				525FFC6024AD04FD00C1E08D /* HomePage.storyboard in Resources */,
 				E85D4B6E249D467100A30864 /* Assets.xcassets in Resources */,
-				52A3872124A657AE003C24F3 /* View Controllers in Resources */,
-				E85D4B6C249D466F00A30864 /* Main.storyboard in Resources */,
+				525FFC5C24ACEB0B00C1E08D /* ShamitMain.storyboard in Resources */,
+				525FFC4924AC529700C1E08D /* LaunchScreen.storyboard in Resources */,
+				5276874924B77D56006BDE26 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,38 +389,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525FFC6924AEB36200C1E08D /* basicjailbreakdetection.swift in Sources */,
+				525FFC5224ACE5C600C1E08D /* LoginViewController.swift in Sources */,
 				52A3871B24A65759003C24F3 /* Custom UIColor Colors.swift in Sources */,
 				52C3BB0A24A65F8D00B4D35E /* UI Button Image on Left Text in Center.swift in Sources */,
+				52291C1824B8BE52004BB24E /* CommunicationController.swift in Sources */,
 				52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */,
+				52291C1424B8B48A004BB24E /* CommunicationPage.swift in Sources */,
+				5276875024B7DCF4006BDE26 /* User.swift in Sources */,
+				52C907B424B1466B0060DF1B /* HideShowPasswordFix.swift in Sources */,
+				525FFC6624AE2F0F00C1E08D /* SpecificBackgroundColor.swift in Sources */,
+				52C907B924B2419D0060DF1B /* ScrollUpFromKeyboard.swift in Sources */,
+				52C907BD24B62F030060DF1B /* Theme Defaults.swift in Sources */,
+				5276873B24B76539006BDE26 /* BiometricLogin.swift in Sources */,
+				52C907B224B0ED580060DF1B /* UITextFieldButton.swift in Sources */,
 				52C3BB1324A9401600B4D35E /* ThemeProtocol.swift in Sources */,
+				525FFC5724ACE77F00C1E08D /* HomePageViewController.swift in Sources */,
+				525FFC5524ACE77C00C1E08D /* SignInViewController.swift in Sources */,
+				52291C1E24B92312004BB24E /* CommunicationDetails.swift in Sources */,
 				52C3BB1924A941CC00B4D35E /* Theme.swift in Sources */,
 				52C3BB1724A9403600B4D35E /* LightTheme.swift in Sources */,
 				52C3BB1524A9402800B4D35E /* DarkTheme.swift in Sources */,
+				5276875224B7DD2B006BDE26 /* Settings.swift in Sources */,
+				5276874E24B7DC8B006BDE26 /* AuthController.swift in Sources */,
 				52547CC524A9792300E3A27E /* ExitKeyboardOnTap.swift in Sources */,
 				E85D4B65249D466F00A30864 /* AppDelegate.swift in Sources */,
-				52A3872424A65D68003C24F3 /* LoginViewController.swift in Sources */,
+				525FFC6424AE207800C1E08D /* AddImageToTextField.swift in Sources */,
 				52C3BB0D24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift in Sources */,
+				525FFC6224AD3EB100C1E08D /* ForgotPasswordViewController.swift in Sources */,
+				52291C2224B97D83004BB24E /* ThemeViewController.swift in Sources */,
 				E85D4B67249D466F00A30864 /* SceneDelegate.swift in Sources */,
+				52291C2024B97D6C004BB24E /* SecurityViewController.swift in Sources */,
+				52291C1C24B8C0DE004BB24E /* CommunicationCell.swift in Sources */,
+				5276874C24B7CE98006BDE26 /* KeychainController.swift in Sources */,
+				5276874724B77D34006BDE26 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E85D4B6A249D466F00A30864 /* Main.storyboard */ = {
+		525FFC4724AC529700C1E08D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E85D4B6B249D466F00A30864 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E85D4B6F249D467100A30864 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E85D4B70249D467100A30864 /* Base */,
+				525FFC4824AC529700C1E08D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		525FFC5A24ACEB0B00C1E08D /* ShamitMain.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				525FFC5B24ACEB0B00C1E08D /* Base */,
+			);
+			name = ShamitMain.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -250,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -296,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -310,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -350,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

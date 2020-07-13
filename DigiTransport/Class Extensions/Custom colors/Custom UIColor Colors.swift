@@ -70,5 +70,10 @@ extension UIColor {
             static let darkgrey = UIColor(netHex: 0x111111)
             
         }
+    
+        struct gray {
+            static let darkgray = UIColor(netHex: 0x191919)
+        }
     }
+    
 }

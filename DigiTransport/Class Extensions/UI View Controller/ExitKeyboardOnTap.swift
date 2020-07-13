@@ -16,8 +16,27 @@ extension UIViewController {
     }
 
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        let seconds = 0.03
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        if !getbuttontap() {
+            self.view.endEditing(true)
+        } else {
+            togglebuttontap()
+        }
+        }
     }
 }
 
+var buttontap = false
+func getbuttontap() -> Bool{
+    return buttontap
+}
 
+public func togglebuttontap() {
+    if buttontap == false {
+        buttontap = true
+    }
+    else if buttontap == true {
+        buttontap = false
+    }
+}
