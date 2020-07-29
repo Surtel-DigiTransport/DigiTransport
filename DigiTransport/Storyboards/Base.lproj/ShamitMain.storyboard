@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLp-7W-p4C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLp-7W-p4C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -22,7 +22,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="ehb-pi-Jz8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="jpV-bP-QQh">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpV-bP-QQh">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="478.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8TZ-JR-eZH">
@@ -43,8 +43,14 @@
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid Login Credentials!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahj-6b-XKx">
+                                                <rect key="frame" x="16" y="175" width="382" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4in-pt-nPd">
-                                                <rect key="frame" x="16" y="217" width="382" height="253.5"/>
+                                                <rect key="frame" x="16" y="205.5" width="382" height="265"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Career UserID" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="VRz-GX-JHh">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
@@ -77,6 +83,7 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
+                                                                    <action selector="forgotPasswordPressed:" destination="j1A-E3-Coy" eventType="touchUpInside" id="HMC-XF-6Ct"/>
                                                                     <segue destination="bK4-xH-Jc1" kind="show" id="DNc-1T-eko"/>
                                                                 </connections>
                                                             </button>
@@ -106,10 +113,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="29F-AY-HOK">
-                                                        <rect key="frame" x="0.0" y="223" width="382" height="30.5"/>
+                                                        <rect key="frame" x="0.0" y="223" width="382" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" contentMode="left" text="I agree and accept DigiTransport Agreement, Private Policy, and Terms of Use " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-ay-hl4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="30.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
                                                                 <color key="backgroundColor" red="0.950502336" green="0.88599288460000003" blue="0.88948029279999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <accessibility key="accessibilityConfiguration">
                                                                     <accessibilityTraits key="traits" none="YES"/>
@@ -177,10 +184,14 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="agreementPolicy" destination="tcM-ay-hl4" id="eo2-6O-mOw"/>
+                        <outlet property="backButton" destination="Igl-xE-J1Q" id="eVw-bY-XK7"/>
                         <outlet property="backgroundImage" destination="y8W-Gw-Z3g" id="F6y-Wb-S0t"/>
                         <outlet property="backgroundView" destination="Wkx-q3-x6T" id="lXM-HC-ANX"/>
                         <outlet property="bottomSpacer" destination="c9K-qg-DOT" id="nLX-vo-OdZ"/>
+                        <outlet property="buttonView" destination="ZLD-8i-g67" id="saP-ro-a0x"/>
+                        <outlet property="errorLabel" destination="ahj-6b-XKx" id="EVv-2c-iXZ"/>
                         <outlet property="forgotPassword" destination="l9J-sM-NGi" id="X53-wa-Pkx"/>
+                        <outlet property="loginButton" destination="Vg9-YJ-Tq0" id="IDM-Tf-tcD"/>
                         <outlet property="loginField" destination="VRz-GX-JHh" id="F3a-eb-vJv"/>
                         <outlet property="passwordField" destination="aLw-Cr-oU3" id="OYT-4b-5uK"/>
                         <outlet property="poweredBy" destination="GcF-jH-tEn" id="ICC-Ct-IOO"/>
@@ -199,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="C2r-dh-04p">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="C2r-dh-04p">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-5u-L2m">
@@ -221,13 +232,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your User ID to receive a code to reset your password." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0m-vq-Hwg">
-                                        <rect key="frame" x="16" y="180" width="382" height="13.5"/>
+                                        <rect key="frame" x="16" y="175" width="382" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-qc-vlg">
-                                        <rect key="frame" x="16" y="215.5" width="382" height="211"/>
+                                        <rect key="frame" x="16" y="205.5" width="382" height="211"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fOw-4G-HCc">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="92"/>
@@ -304,7 +315,7 @@
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="lDN-gX-P1w">
-                                        <rect key="frame" x="16" y="448.5" width="382" height="268.5"/>
+                                        <rect key="frame" x="16" y="433.5" width="382" height="283.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
@@ -335,6 +346,7 @@
                         <outlet property="backgroundImage" destination="D4K-6Y-jxm" id="eon-AM-Mgp"/>
                         <outlet property="backgroundView" destination="MF3-Zg-WUt" id="3G5-Ve-Rfm"/>
                         <outlet property="bottomSpacer" destination="lDN-gX-P1w" id="ORT-UN-qef"/>
+                        <outlet property="forgotPasswordButtonView" destination="2nC-Mh-Y1z" id="ov4-qL-qG0"/>
                         <outlet property="forgotPasswordFieldTwo" destination="5rT-pd-KpL" id="pMt-T8-KSy"/>
                         <outlet property="forgotPasswordTextField" destination="dgA-t3-eZB" id="bUc-X2-WOZ"/>
                         <outlet property="forgotpasswordButton" destination="Cif-nD-LzL" id="ius-fi-j0v"/>
@@ -361,6 +373,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="411-26-NUw">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="j1A-E3-Coy" kind="relationship" relationship="rootViewController" id="XAv-mq-ATL"/>
                     </connections>

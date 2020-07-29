@@ -14,9 +14,29 @@ func setThemeDefault(state: String = "LightTheme") {
     ThemeDefaults.set(state, forKey: "ThemeDefaults")
 }
 
-func getThemeDefault() -> String{
+
+func getThemeDefault() -> String {
     if ThemeDefaults.object(forKey:"ThemeDefaults") as? String == nil {
-        ThemeDefaults.set("LightTheme", forKey: "ThemeDefaults")
+        switch UITraitCollection.current.userInterfaceStyle {
+            case .light: ThemeDefaults.set("LightTheme", forKey: "ThemeDefaults")
+            case .dark: ThemeDefaults.set("DarkTheme", forKey: "ThemeDefaults")
+            case .unspecified: ThemeDefaults.set("LightTheme", forKey: "ThemeDefaults")
+        @unknown default:
+            fatalError()
+        }
+    }
+    if ThemeDefaults.object(forKey:"systemTheme") == nil {
+
+        ThemeDefaults.set(true, forKey: "systemTheme")
+    }
+    if ThemeDefaults.object(forKey:"systemTheme") as! Bool == true {
+        switch UITraitCollection.current.userInterfaceStyle {
+            case .light: ThemeDefaults.set("LightTheme", forKey: "ThemeDefaults")
+            case .dark: ThemeDefaults.set("DarkTheme", forKey: "ThemeDefaults")
+            case .unspecified: ThemeDefaults.set("LightTheme", forKey: "ThemeDefaults")
+        @unknown default:
+            fatalError()
+        }
     }
     return ThemeDefaults.object(forKey:"ThemeDefaults") as! String
 }

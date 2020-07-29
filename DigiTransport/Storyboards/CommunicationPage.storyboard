@@ -177,14 +177,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y1Y-f7-WQa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Communication Page" id="xyE-4N-pWd">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="9Yi-IL-olL">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="backButton:" destination="SPH-hs-j7w" id="chG-Bf-QZJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Communication Page" id="xyE-4N-pWd"/>
                     <connections>
                         <outlet property="backgroundView" destination="qDS-Rf-Wdh" id="U5z-hJ-vxX"/>
                         <outlet property="tableView" destination="PGM-Km-Qzc" id="FwU-Ik-56i"/>
@@ -198,7 +191,8 @@
         <!--Navigation Controller-->
         <scene sceneID="3El-WG-3m7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ItI-YY-C98" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Vb-ih-41Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="CommunicationNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ItI-YY-C98" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yDn-0r-HnM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -213,7 +207,6 @@
                         <segue destination="SPH-hs-j7w" kind="relationship" relationship="rootViewController" id="BhX-Ni-2OS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Vb-ih-41Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75"/>
         </scene>

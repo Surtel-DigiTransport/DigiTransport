@@ -13,13 +13,16 @@ class CommunicationDetailsViewController: UIViewController {
 
     var passthroughstring:String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(passthroughstring)
-
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
+        
         navigationController?.popViewController(animated: true)
     }
     

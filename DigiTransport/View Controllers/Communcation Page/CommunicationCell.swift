@@ -28,22 +28,20 @@ class CommunicationCell: UITableViewCell {
     @IBOutlet var collectionOfCommunicationLabels: Array<UILabel>!
     
     
-    func applyTheme() {
-        for i in 0..<collectionOfCommunicationLabels.count {
-        collectionOfCommunicationLabels[i].textColor = Theme.current.textColor
-//            collectionOfCommunicationLabels[i].backgroundColor = Theme.current.backgroundColor
-        }
-//        backgroundcontentView.backgroundColor = Theme.current.backgroundColor
-        CommunicationType.textColor = Theme.current.textColor
-        subject.textColor = Theme.current.textColor
-        partnerType.textColor = Theme.current.textColor
-        partnerID.textColor = Theme.current.textColor
-        effectiveFrom.textColor = Theme.current.textColor
-        effectiveTo.textColor = Theme.current.textColor
-        downtimeFrom.textColor = Theme.current.textColor
-        downtimeTo.textColor = Theme.current.textColor
-//        backgroundButton.backgroundColor = Theme.current.backgroundColor
+    @objc func applyTheme() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            applyThemeDefault()
+            self.CommunicationType.textColor = Theme.current.textColor
+            self.subject.textColor = Theme.current.textColor
+            self.partnerType.textColor = Theme.current.textColor
+            self.partnerID.textColor = Theme.current.textColor
+            self.effectiveFrom.textColor = Theme.current.textColor
+            self.effectiveTo.textColor = Theme.current.textColor
+            self.downtimeFrom.textColor = Theme.current.textColor
+            self.downtimeTo.textColor = Theme.current.textColor
         
+//        backgroundButton.backgroundColor = Theme.current.backgroundColor
+        }
     }
     
 
@@ -57,34 +55,10 @@ class CommunicationCell: UITableViewCell {
         effectiveTo.text = communication.effectiveTo
         downtimeFrom.text = communication.downtimeFrom
         downtimeTo.text = communication.downtimeTo
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
         applyTheme()
         
     }
     
 }
 
-
-//extension ViewController: UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: indexPath) {
-//        print("tapped")
-//    }
-//}
-//
-//extension ViewController: UITableViewDataSource {
-//    number
-//
-//}
-
-
-
-
-//override func numberOfSections(in tableView: UITableView) -> Int {
-//    // #warning Incomplete implementation, return the number of sections
-//    return 0
-//}
-//
-//override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    // #warning Incomplete implementation, return the number of rows
-//    return 0
-//}

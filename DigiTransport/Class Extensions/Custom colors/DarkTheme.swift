@@ -19,5 +19,6 @@ class DarkTheme: ThemeProtocol {
     var blackWhite: UIColor  = UIColor.white
     var digitransportLogo: UIImage = UIImage(named: "DigiTransportWhite")!
     var lineaccents: UIColor = UIColor.lightGray.withAlphaComponent(0.3)
+    var tabBarColors: UIColor = UIColor.custom.gray.offdarkgray
     
 }

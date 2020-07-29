@@ -22,6 +22,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var forgotpasswordButton: UIButton!
     
     @IBOutlet weak var bottomSpacer: UIView!
+    @IBOutlet weak var forgotPasswordButtonView: UIStackView!
     
     @IBOutlet weak var topSpacer: UIView!
     
@@ -77,7 +78,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             
             
         } else if screenNumber == 3 {
-            self.ScrollUpFromKeyboard()
             forgotPasswordTextField.isSecureTextEntry = true
             forgotPasswordFieldTwo.isSecureTextEntry = true
             forgotPasswordTextField.showhidepasswordbutton()
@@ -119,6 +119,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         print("sent reset link")
         
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +129,25 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    var keyboardHeight: CGFloat = 0.0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardHeight = KeyboardService.keyboardHeight()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+             let realOrigin = forgotPasswordButtonView.convert(forgotpasswordButton.frame.origin, to: self.view)
+             let buttonHeight = view.frame.size.height - (forgotpasswordButton.frame.size.height + realOrigin.y)
+           if keyboardHeight > buttonHeight {
+               self.ScrollUpFromKeyboard(amount: keyboardHeight - buttonHeight)
+           } else {
+                self.ScrollUpFromKeyboard(amount: -10)
+           }
+                    
+             
+       }
     
     fileprivate func backToLogin() {
         navigationController?.popViewController(animated: true)
@@ -155,10 +175,13 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         backToLogin()
     }
     
+    
+    // Enter in Bussiness logic
+    // Go to next page is true or false based on response from api
     fileprivate func infoAuthentication() {
         var goToNextPage = false
         if screenNumber == 1 {
-
+            
             goToNextPage = true
         }
         else if screenNumber == 2 {
@@ -166,6 +189,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             goToNextPage = true
         }
         else if screenNumber == 3 {
+            
             goToNextPage = true
         }
         if goToNextPage == true {
@@ -184,30 +208,30 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         infoAuthentication()
     }
     
-    fileprivate func applyTheme() {
-
-        backToLoginButton.backgroundColor = Theme.current.backgroundColor
-        messageLabel.backgroundColor = Theme.current.backgroundColor
-        resendCodeLabel.backgroundColor = Theme.current.backgroundColor
-        backgroundView.backgroundColor = Theme.current.backgroundColor
-        forgotPasswordTextField.backgroundColor = Theme.current.backgroundColor
-        forgotPasswordFieldTwo.backgroundColor = Theme.current.backgroundColor
-        bottomSpacer.backgroundColor = Theme.current.backgroundColor
-        topSpacer.alpha = 0.0
-        forgotPasswordFieldTwo.backgroundColor = Theme.current.backgroundColor
-        forgotPasswordTextField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
-        forgotPasswordFieldTwo.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
-        forgotPasswordTextField.textColor = Theme.current.textColor
-        forgotPasswordFieldTwo.textColor = Theme.current.textColor
-        messageLabel.textColor = Theme.current.textColor
-        resendCodeLabel.setTitleColor(Theme.current.grays, for:.normal)
-        backToLoginButton.setTitleColor(Theme.current.grays, for:.normal)
-        backgroundImage.image = Theme.current.digitransportLogo
+    @objc func applyTheme() {
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.backToLoginButton.backgroundColor = Theme.current.backgroundColor
+            self.messageLabel.backgroundColor = Theme.current.backgroundColor
+            self.resendCodeLabel.backgroundColor = Theme.current.backgroundColor
+            self.backgroundView.backgroundColor = Theme.current.backgroundColor
+            self.forgotPasswordTextField.backgroundColor = Theme.current.backgroundColor
+            self.forgotPasswordFieldTwo.backgroundColor = Theme.current.backgroundColor
+            self.bottomSpacer.backgroundColor = Theme.current.backgroundColor
+            self.topSpacer.alpha = 0.0
+            self.forgotPasswordFieldTwo.backgroundColor = Theme.current.backgroundColor
+            self.forgotPasswordTextField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
+            self.forgotPasswordFieldTwo.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
+            self.forgotPasswordTextField.textColor = Theme.current.textColor
+            self.forgotPasswordFieldTwo.textColor = Theme.current.textColor
+            self.messageLabel.textColor = Theme.current.textColor
+            self.resendCodeLabel.setTitleColor(Theme.current.grays, for:.normal)
+            self.backToLoginButton.setTitleColor(Theme.current.grays, for:.normal)
+            self.backgroundImage.image = Theme.current.digitransportLogo
 //        forgotPasswordTextField
 //        forgotpasswordButton
 //        bottomSpacer
 //        topSpacer
-            
+        }
         }
 }
 

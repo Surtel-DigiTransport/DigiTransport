@@ -19,9 +19,20 @@ class SettingsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var logoutButton: UIButton!
     
-
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.hidesBottomBarWhenPushed = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         applyTheme()
         
         
@@ -30,37 +41,35 @@ class SettingsViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    func applyTheme() {
-        backgroundView.backgroundColor = Theme.current.backgroundColor
-        logoutButton.setTitleColor(Theme.current.grays, for:.normal)
-        for i in 0..<collectionOfLabels.count {
-        collectionOfLabels[i].textColor = Theme.current.textColor
+    @objc func applyTheme() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+        applyThemeDefault()
+        UITabBar.appearance().barTintColor = Theme.current.tabBarColors
+            self.backgroundView.backgroundColor = Theme.current.backgroundColor
+            self.logoutButton.setTitleColor(Theme.current.grays, for:.normal)
+        for i in 0..<self.collectionOfLabels.count {
+            self.collectionOfLabels[i].textColor = Theme.current.textColor
         }
-        for i in 0..<collectionOfViews.count {
-        collectionOfViews[i].backgroundColor = Theme.current.backgroundColor
+        for i in 0..<self.collectionOfViews.count {
+            self.collectionOfViews[i].backgroundColor = Theme.current.backgroundColor
         }
-        for i in 0..<collectionOfArrows.count {
-        collectionOfArrows[i].tintColor = Theme.current.textColor
+        for i in 0..<self.collectionOfArrows.count {
+            self.collectionOfArrows[i].tintColor = Theme.current.textColor
         }
-        
+        }
     
     }
-    @IBAction func logoutCalled(_ sender: Any) {
-        try? AuthController.signOut()
-        let storyboard = UIStoryboard(name: "ShamitMain", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "LoginVC")
-        self.navigationController?.pushViewController(secondVC, animated: true)
-    }
+    
     
     
     @IBAction func showThemes(_ sender: Any) {
-        print("test")
+       
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "ThemesVC")
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
     @IBAction func showSecurity(_ sender: Any) {
-        print("test1")
+        
         
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "SecurityVC")

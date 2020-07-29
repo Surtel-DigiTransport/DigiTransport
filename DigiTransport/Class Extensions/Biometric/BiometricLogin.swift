@@ -42,12 +42,12 @@ extension UIViewController {
 }
 }
 
+var biometryvalue = -1
 
 func biometryType() -> Int {
     let context = LAContext()
 
     if (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)) {
-
             if (context.biometryType == LABiometryType.faceID) {
                 return 0
             } else if (context.biometryType == LABiometryType.touchID) {
@@ -57,5 +57,14 @@ func biometryType() -> Int {
             }
         
     }
-    return 2
+    if (context.biometryType == LABiometryType.faceID) {
+        biometryvalue = 0
+    } else if (context.biometryType == LABiometryType.touchID) {
+        biometryvalue = 1
+    }
+    return 3
+}
+
+func getbiometryValueType() -> Int{
+    return biometryvalue
 }

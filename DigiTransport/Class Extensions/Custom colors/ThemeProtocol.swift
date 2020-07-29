@@ -18,5 +18,6 @@ protocol ThemeProtocol {
     var blackWhite: UIColor {get}
     var digitransportLogo: UIImage {get}
     var lineaccents: UIColor {get}
+    var tabBarColors: UIColor {get}
     
 }

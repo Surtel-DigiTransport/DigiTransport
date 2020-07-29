@@ -1,29 +1,24 @@
 //
-//  CommunicationPage.swift
+//  SettingsImproved.swift
 //  DigiTransport
 //
-//  Created by Shamit Surana on 7/10/20.
+//  Created by Shamit Surana on 7/16/20.
 //  Copyright © 2020 RS Infocon. All rights reserved.
 //
 
+
 import UIKit
 
-class CommunicationViewController: UIViewController {
+class SettingViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var text:String = ""
+    @IBOutlet weak var logoutButton: UIButton!
     
-    var communicationcells: [Communication] = []
     
-    var communicationType: [String] = ["Cell", "Cell7"]
-    var subject: [String] = ["Cell1", "Cell6"]
-    var partnerType: [String] = ["Cell2", "Cell5"]
-    var partnerID: [String] = ["Cell3", "Cell4"]
-    var effectiveFrom: [String] = ["Cell4", "Cell3"]
-    var effectiveTo: [String] = ["Cell5", "Cell2"]
-    var downtimeFrom: [String] = ["Cell6", "Cell1"]
-    var downtimeTo: [String] = ["Cell7", "Cell"]
+    var settingsCells: [SettingsController] = []
+    
+    var settingsValues: [String] = ["Themes", "Security"]
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -45,8 +40,7 @@ class CommunicationViewController: UIViewController {
         tableView.dataSource = self
         UITabBar.appearance().barTintColor = Theme.current.tabBarColors
         applyTheme()
-        communicationcells = createArray()
-        
+        settingsCells = createArray()
         
     }
     
@@ -56,26 +50,21 @@ class CommunicationViewController: UIViewController {
         applyThemeDefault()
             self.tableView.backgroundColor = Theme.current.backgroundColor
             self.backgroundView.backgroundColor = Theme.current.backgroundColor
+            self.logoutButton.setTitleColor(Theme.current.grays, for: .normal)
+            UITabBar.appearance().barTintColor = Theme.current.tabBarColors
             self.tableView.reloadData()
         }
     }
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
-    func createArray() -> [Communication] {
-        var tempcell: [Communication] = []
     
-        for i in  0..<communicationType.count {
-            let Cell1 = Communication(
-            communicationType: communicationType[i],
-            subject: subject[i],
-            partnerType: partnerType[i],
-            partnerID: partnerID[i],
-            effectiveFrom: effectiveFrom[i],
-            effectiveTo: effectiveTo[i],
-            downtimeFrom: downtimeFrom[i],
-            downtimeTo: downtimeTo[i])
+    func createArray() -> [SettingsController] {
+        var tempcell: [SettingsController] = []
+    
+        for i in  0..<settingsValues.count {
+            let Cell1 = SettingsController(
+                label: settingsValues[i],
+                rightarrow: UIImage(systemName: "chevron.right")!
+            )
             
             tempcell.append(Cell1)
             
@@ -84,33 +73,35 @@ class CommunicationViewController: UIViewController {
         return tempcell
     }
     
-//    communicationType
-//          subject
-//          partnerType
-//          partnerID
-//          effectiveFrom
-//          effectiveTo
-//          downtimeFrom
-//          downtimeTo
+    @IBAction func logoutCalled(_ sender: Any) {
+        try? AuthController.signOut()
+        let storyboard = UIStoryboard(name: "ShamitMain", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "LoginVC")
+        let seconds = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        self.hidesBottomBarWhenPushed = true
+        }
+        self.navigationController?.pushViewController(secondVC, animated: true)
+    }
+
 }
 
-extension CommunicationViewController: UITableViewDataSource, UITableViewDelegate {
+extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communicationcells.count
+        return settingsCells.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let settingCell = settingsCells[indexPath.row]
         
-        let communicationCell = communicationcells[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunicationCell") as! CommunicationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell") as! SettingsCell
         
         cell.backgroundColor = Theme.current.backgroundColor
 
         cell.selectionStyle = .none
-        cell.setCommunication(communication: communicationCell)
+        cell.setSettings(settings: settingCell)
         return cell
         
     }
@@ -118,13 +109,8 @@ extension CommunicationViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath as IndexPath)
         selectedCell!.backgroundColor = UIColor.systemGray.withAlphaComponent(0.2)
-        myComputedProperty = indexPath.row
+        goToSetting(int: indexPath.row)
         
-        performSegue(withIdentifier: "CommunicationSegue", sender: self)
-        let seconds = 0.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            selectedCell!.backgroundColor = Theme.current.backgroundColor
-        }
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath as IndexPath)
@@ -142,34 +128,17 @@ extension CommunicationViewController: UITableViewDataSource, UITableViewDelegat
         selectedCell!.backgroundColor = Theme.current.backgroundColor
     }
     
-    
-    struct Holder {
-        static var _myComputedProperty:Int = -1
-    }
-    var myComputedProperty:Int {
-        get {
-            return Holder._myComputedProperty
-        }
-        set(newValue) {
-            Holder._myComputedProperty = newValue
-        }
-    }
-    
-
-
-//    @objc func buttonTapped(_ sender: UIButton) {
-//        myComputedProperty = sender.tag
-//        performSegue(withIdentifier: "CommunicationSegue", sender: self)
-//
-//    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailsController = segue.destination as! CommunicationDetailsViewController
-        detailsController.passthroughstring = String(myComputedProperty)
+    func goToSetting(int: Int = 0) {
         
-
+        var controller: String = "Error"
+        if int == 0 {controller = "ThemesVC"}
+        if int == 1 {controller = "SecurityVC"}
+        
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: controller)
+        self.navigationController?.pushViewController(secondVC, animated: true)
+        
     }
-    
     
     
 }

@@ -3,7 +3,7 @@ import Foundation
 
 final class AuthController {
   
-  static let serviceName = "FriendvatarsService"
+  static let serviceName = "DigiTransportKeychain"
   
   static var isSignedIn: Bool {
     guard let currentUser = Settings.currentUser else {

@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIViewController {
-    func ScrollUpFromKeyboard() {
+    func ScrollUpFromKeyboard(amount: CGFloat) {
+        placement.amount = amount
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeUnActive), name: UIApplication.willResignActiveNotification, object: nil)
@@ -18,7 +19,8 @@ extension UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= 50
+                self.view.frame.origin.y -= 10 + placement.amount
+            
             }
         }
     }
@@ -35,6 +37,9 @@ extension UIViewController {
         
     }
     
+    struct placement {
+        static var amount: CGFloat = 0.0
+    }
 }
 
 
