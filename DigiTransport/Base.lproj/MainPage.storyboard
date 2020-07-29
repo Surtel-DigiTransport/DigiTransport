@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KTe-QJ-D2X">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DigiTransport-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="DigiTransport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sxd-va-ydN">
+                                <rect key="frame" x="20" y="136" width="335" height="408"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_tagline_maroon" translatesAutoresizingMaskIntoConstraints="NO" id="gHZ-dv-csx">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="135"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dAW-82-ep1">
+                                        <rect key="frame" x="0.0" y="155" width="335" height="133"/>
+                                        <subviews>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Reduced Empty Miles" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BU0-GZ-Rw4">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="18.666666666666668"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Improved Shipment Process" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OV7-pM-QXA">
+                                                <rect key="frame" x="0.0" y="23.666666666666686" width="335" height="17.333333333333329"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Digital Payments" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGO-rs-QJj">
+                                                <rect key="frame" x="0.0" y="46" width="335" height="17.333333333333329"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textFieldTwo:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qyK-Pz-9BK"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Eliminate 3rd Party Interaction" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xrj-3H-EsD">
+                                                <rect key="frame" x="0.0" y="68.333333333333314" width="335" height="17.333333333333329"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Trip Management Tools" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCo-s9-lYh">
+                                                <rect key="frame" x="0.0" y="90.666666666666686" width="335" height="18.666666666666671"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Trace and Track Deliveries" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-tZ-kqj">
+                                                <rect key="frame" x="0.0" y="114.33333333333331" width="335" height="18.666666666666657"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncT-Rp-mKt">
+                                        <rect key="frame" x="0.0" y="308" width="335" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9C2-aK-2gi"/>
+                                        </constraints>
+                                        <state key="normal" title="SignUp">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejy-Iu-kD1"/>
+                                            <segue destination="7MZ-7z-aLB" kind="show" id="PZo-l6-3Bh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jY-Eg-yEJ">
+                                        <rect key="frame" x="0.0" y="368" width="335" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="59t-0v-9Mc"/>
+                                        </constraints>
+                                        <state key="normal" title="LogIn">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUY-Ov-zLp"/>
+                                            <segue destination="Isn-6t-Iay" kind="show" id="sHQ-2j-QdX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by R S InfoCon Inc. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9u-Et-afD">
+                                <rect key="frame" x="94.666666666666686" y="753" width="186" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sxd-va-ydN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6IH-w9-QUm"/>
+                            <constraint firstItem="q9u-Et-afD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9l0-rh-R9J"/>
+                            <constraint firstItem="Sxd-va-ydN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="NMH-Yu-mrc"/>
+                            <constraint firstItem="Sxd-va-ydN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="QfK-QQ-3TA"/>
+                            <constraint firstItem="Sxd-va-ydN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pzx-nY-VBJ"/>
+                            <constraint firstItem="q9u-Et-afD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-8" id="ssh-dr-4Yv"/>
+                            <constraint firstItem="q9u-Et-afD" firstAttribute="centerX" secondItem="Sxd-va-ydN" secondAttribute="centerX" id="z41-K3-wDZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="DigiTransport" id="JBI-7G-ouH"/>
+                    <connections>
+                        <outlet property="logIn" destination="0jY-Eg-yEJ" id="jpI-hv-v0M"/>
+                        <outlet property="poweredBy" destination="q9u-Et-afD" id="Sax-O4-5M9"/>
+                        <outlet property="signUp" destination="ncT-Rp-mKt" id="iub-KP-3eV"/>
+                        <outlet property="textFieldFive" destination="kCo-s9-lYh" id="flT-F2-beC"/>
+                        <outlet property="textFieldFour" destination="Xrj-3H-EsD" id="azf-9c-8MX"/>
+                        <outlet property="textFieldOne" destination="BU0-GZ-Rw4" id="epS-LJ-Mnb"/>
+                        <outlet property="textFieldSix" destination="fKa-tZ-kqj" id="jeQ-Bl-gI6"/>
+                        <outlet property="textFieldThree" destination="OV7-pM-QXA" id="gHe-q0-5v2"/>
+                        <outlet property="textFieldTwo" destination="UGO-rs-QJj" id="TPW-CQ-jge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="102.45535714285714"/>
+        </scene>
+        <!--notificationDisplay-->
+        <scene sceneID="vTv-i3-Jfz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notifications" referencedIdentifier="notificationDisplay" id="Isn-6t-Iay" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rvr-NA-qTL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZbO-fh-02M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="61"/>
+        </scene>
+        <!--ManageDrivers-->
+        <scene sceneID="NZj-cl-mW7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ManageDrivers" referencedIdentifier="ManageDrivers" id="7MZ-7z-aLB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9CB-91-A4l"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cmb-pw-7TG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="140"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DY5-rF-65c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KTe-QJ-D2X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uEv-am-GWz">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HDR-ez-OKU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chc-6I-cLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+    <resources>
+        <image name="logo_tagline_maroon" width="380" height="135"/>
+    </resources>
+</document>

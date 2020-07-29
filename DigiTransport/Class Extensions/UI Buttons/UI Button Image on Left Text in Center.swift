@@ -10,12 +10,12 @@ import UIKit
 
 class CustomButton : UIButton {
 
-    @IBInspectable var alignImageToLeft : Bool = false
+    @IBInspectable var alignImageToRight : Bool = false
 
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        if(alignImageToLeft){
+        if(alignImageToRight){
             let imageRect = super.imageRect(forContentRect: contentRect)
-            let offset = contentRect.minX - imageRect.minX + 10
+            let offset = contentRect.maxX - imageRect.maxX + 10
             return imageRect.offsetBy(dx: offset, dy: 0.0)
         }
         return super.imageRect(forContentRect: contentRect)
