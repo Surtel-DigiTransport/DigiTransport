@@ -175,34 +175,6 @@ class InitialRegistrationPageViewController: UIViewController, UITableViewDelega
     }
     
     func submitInitialRegistrationDetails (details : initialRegistrationDetails) {
-        let url = URL(string: "http://sLogisticglobalapiuat.surteltechnologies.com/api/registrationapi/SubmitCarrierInitialRegistrationdfsfsdfs" )!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: details, options: []) else { return }
-        request.httpBody = httpBody
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, err) in
-            guard let data = data else { return }
-            do {
-                let dataStruct = try
-                JSONDecoder().decode(stateAndCityStruct.self, from: data)
-                DispatchQueue.main.async {
-                    if dataStruct.Status == true {
-                        self.stateTextField.text = dataStruct.StateName
-                        self.cityTextField.text = dataStruct.CityName
-                    } else {
-                        let alert = UIAlertController(title: "Invalid Zip Code", message: dataStruct.Message, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                        self.present(alert, animated: true)
-                    }
-                }
-            } catch {
-                print(err)
-            }
-            
-
-        }.resume()
         
         
     }
@@ -210,8 +182,7 @@ class InitialRegistrationPageViewController: UIViewController, UITableViewDelega
     
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        let details = initialRegistrationDetails.init(CarrierCompanyName: carrierCompanyNameTextField.text!, CarrierCompanyPhoneNumber: companyFaxNumberTextField.text!, PrimaryContactPersonName: primaryContactPersonNameTextField.text!, PrimaryContactPersonPhoneNumber: primaryContactPersonPhoneNumberTextField.text!, PrimaryContactPersonMobileNumber: primaryContactPersonMobileNumberTextField.text!, PrimaryContactEmail: primaryContactEmailTextField.text!, AddressLine1: addressTextField.text!, AdressLine2: addressLine2TextField.text!, CountryId: countryId, StateName: stateTextField.text!, CityName: cityTextField.text!, ZipCode: zipCodeTextField.text!, ShipperCode: shipperIDTextField.text!)
-        submitInitialRegistrationDetails ( details: details)
+        
         
     }
     func setUpElements () {
