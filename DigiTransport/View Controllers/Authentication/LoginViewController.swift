@@ -38,9 +38,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var userStyle = ""
     
-var forgotPasswordpressed = false
+    var loginbuttonPressed  = false
+    
     override func viewDidLoad() {
-        
+        setScrollUpFromKeyboardtoTrue()
     }
     var keyboardHeight: CGFloat = 0.0
     
@@ -49,10 +50,12 @@ var forgotPasswordpressed = false
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         
-        forgotPasswordpressed = false
-        super.viewDidLoad()
+        loginbuttonPressed = false
+        super.viewWillAppear(animated)
+        print("what's popping")
+        keyboardscroll()
         
-        print("done")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
         applyThemeDefault()
         passwordField.showhidepasswordbutton()
@@ -127,7 +130,7 @@ var forgotPasswordpressed = false
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
-        if forgotPasswordpressed == false {
+        if loginbuttonPressed == true  {
         navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == false, animated: true)
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
@@ -135,22 +138,29 @@ var forgotPasswordpressed = false
     var realOrigin: CGPoint = CGPoint(x: 0,y: 0)
     var buttonHeight: CGFloat = 0.0
     
-    override func viewDidLayoutSubviews() {
-        realOrigin = buttonView.convert(loginButton.frame.origin, to: self.view)
+    override func viewWillLayoutSubviews() {
+        keyboardscroll()
+    
+    }
+    
+    var counter = 0
+    func keyboardscroll() {
+        
+       realOrigin = buttonView.convert(loginButton.frame.origin, to: self.view)
         buttonHeight = view.frame.size.height - (loginButton.frame.size.height + realOrigin.y)
+        print(String(counter) + ". " + String(Int(keyboardHeight)))
+        print(String(counter) + ". " + String(Int(buttonHeight)))
          if keyboardHeight > buttonHeight {
+            print(keyboardHeight - buttonHeight)
              self.ScrollUpFromKeyboard(amount: keyboardHeight - buttonHeight)
          } else {
               self.ScrollUpFromKeyboard(amount: -10)
               
          }
+        counter += 1
     }
-    
   
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
-        forgotPasswordpressed = true
-    }
-    
+
     struct myImages {
         static let loginImage = UIImage(systemName: "person")!
         static let passwordImage = UIImage(systemName: "lock")!
@@ -210,9 +220,10 @@ var forgotPasswordpressed = false
         if loginResponseDetails.status == true {
             do {
                 try AuthController.signIn(user, password: password)
-
+                
                 let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+                loginbuttonPressed = true
                 self.navigationController?.pushViewController(secondVC, animated: true)
             } catch {
                 print("Error signing in: \(error.localizedDescription)")

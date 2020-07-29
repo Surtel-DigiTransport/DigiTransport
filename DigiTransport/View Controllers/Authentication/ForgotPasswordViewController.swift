@@ -125,19 +125,32 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        setScrollUpFromKeyboardtoTrue()
         runMain()
         
         
+        
     }
+    
+    var scrollfeature = false
     
     var keyboardHeight: CGFloat = 0.0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.forgotPasswordTextField.isEnabled = true
+        self.forgotPasswordFieldTwo.isEnabled = true
+        scrollfeature = true
+        keyboardscroll()
         keyboardHeight = KeyboardService.keyboardHeight()
         NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    override func viewDidLayoutSubviews() {
+
+    override func viewWillLayoutSubviews() {
+        keyboardscroll()
+       }
+    func keyboardscroll() {
+        if scrollfeature == true {
              let realOrigin = forgotPasswordButtonView.convert(forgotpasswordButton.frame.origin, to: self.view)
              let buttonHeight = view.frame.size.height - (forgotpasswordButton.frame.size.height + realOrigin.y)
            if keyboardHeight > buttonHeight {
@@ -146,11 +159,17 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
                 self.ScrollUpFromKeyboard(amount: -10)
            }
                     
-             
-       }
+        }
+    }
     
     fileprivate func backToLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.forgotPasswordTextField.isEnabled = false
+        self.forgotPasswordFieldTwo.isEnabled = false
+        scrollfeature = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

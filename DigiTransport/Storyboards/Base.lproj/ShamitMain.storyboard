@@ -83,7 +83,6 @@
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="forgotPasswordPressed:" destination="j1A-E3-Coy" eventType="touchUpInside" id="HMC-XF-6Ct"/>
                                                                     <segue destination="bK4-xH-Jc1" kind="show" id="DNc-1T-eko"/>
                                                                 </connections>
                                                             </button>
