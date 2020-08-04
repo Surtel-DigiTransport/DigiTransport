@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		5203A30D24BD071F001D12E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203A30C24BD071F001D12E9 /* Settings.swift */; };
 		5203A30F24BD07A0001D12E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203A30E24BD079F001D12E9 /* User.swift */; };
+		5222054C24D236F400F73916 /* Bid Pages in Resources */ = {isa = PBXBuildFile; fileRef = 5222054B24D236F400F73916 /* Bid Pages */; };
+		5222054F24D2376E00F73916 /* InitialRegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222054D24D2376E00F73916 /* InitialRegistrationPageViewController.swift */; };
+		5222055024D2376E00F73916 /* FinalRegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222054E24D2376E00F73916 /* FinalRegistrationPageViewController.swift */; };
+		5222055224D2379400F73916 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222055124D2379400F73916 /* Utilities.swift */; };
+		5222055424D237E800F73916 /* TanayMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5222055324D237E800F73916 /* TanayMain.storyboard */; };
+		5222055624D2382300F73916 /* dropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222055524D2382300F73916 /* dropdownTableViewCell.swift */; };
+		5222055824D3477600F73916 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222055724D3477600F73916 /* Test.swift */; };
 		52291C1124B8B410004BB24E /* CommunicationPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52291C1024B8B410004BB24E /* CommunicationPage.storyboard */; };
 		52291C1424B8B48A004BB24E /* CommunicationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1324B8B48A004BB24E /* CommunicationPage.swift */; };
 		52291C1824B8BE52004BB24E /* CommunicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291C1724B8BE52004BB24E /* CommunicationController.swift */; };
@@ -32,6 +39,7 @@
 		5276874724B77D34006BDE26 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874624B77D34006BDE26 /* SettingsViewController.swift */; };
 		5276874C24B7CE98006BDE26 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874B24B7CE98006BDE26 /* KeychainController.swift */; };
 		5276874E24B7DC8B006BDE26 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276874D24B7DC8B006BDE26 /* AuthController.swift */; };
+		52821E6924D87B9200961364 /* API Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52821E6824D87B9200961364 /* API Requests.swift */; };
 		52A3871B24A65759003C24F3 /* Custom UIColor Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */; };
 		52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */; };
 		52A9464324BF5D980050AA0A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A9464224BF5D980050AA0A /* Settings.storyboard */; };
@@ -57,6 +65,13 @@
 /* Begin PBXFileReference section */
 		5203A30C24BD071F001D12E9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5203A30E24BD079F001D12E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5222054B24D236F400F73916 /* Bid Pages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = "Bid Pages"; sourceTree = "<group>"; };
+		5222054D24D2376E00F73916 /* InitialRegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialRegistrationPageViewController.swift; path = "DigiTransport/View Controllers/InitialRegistrationPageViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5222054E24D2376E00F73916 /* FinalRegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinalRegistrationPageViewController.swift; path = "DigiTransport/View Controllers/FinalRegistrationPageViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5222055124D2379400F73916 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = "DigiTransport/View Controllers/Settings/Utilities.swift"; sourceTree = SOURCE_ROOT; };
+		5222055324D237E800F73916 /* TanayMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TanayMain.storyboard; path = DigiTransport/TanayMain.storyboard; sourceTree = SOURCE_ROOT; };
+		5222055524D2382300F73916 /* dropdownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = dropdownTableViewCell.swift; path = "DigiTransport/View Controllers/Settings/dropdownTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		5222055724D3477600F73916 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		52291C1024B8B410004BB24E /* CommunicationPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommunicationPage.storyboard; sourceTree = "<group>"; };
 		52291C1324B8B48A004BB24E /* CommunicationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationPage.swift; sourceTree = "<group>"; };
 		52291C1724B8BE52004BB24E /* CommunicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationController.swift; sourceTree = "<group>"; };
@@ -81,6 +96,7 @@
 		5276874624B77D34006BDE26 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5276874B24B7CE98006BDE26 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
 		5276874D24B7DC8B006BDE26 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		52821E6824D87B9200961364 /* API Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Requests.swift"; sourceTree = "<group>"; };
 		52A3871A24A65759003C24F3 /* Custom UIColor Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom UIColor Colors.swift"; sourceTree = "<group>"; };
 		52A3871C24A6575D003C24F3 /* UIColor Hex to RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Hex to RGB.swift"; sourceTree = "<group>"; };
 		52A9464224BF5D980050AA0A /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -163,6 +179,7 @@
 		525FFC5324ACE75100C1E08D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5222054B24D236F400F73916 /* Bid Pages */,
 				52291C1224B8B451004BB24E /* Communcation Page */,
 				5276874524B77D04006BDE26 /* Home Page */,
 				5276874424B77CF9006BDE26 /* Settings */,
@@ -201,6 +218,7 @@
 			children = (
 				525FFC4724AC529700C1E08D /* LaunchScreen.storyboard */,
 				52291C1024B8B410004BB24E /* CommunicationPage.storyboard */,
+				5222055324D237E800F73916 /* TanayMain.storyboard */,
 				525FFC5A24ACEB0B00C1E08D /* ShamitMain.storyboard */,
 				525FFC5F24AD04FD00C1E08D /* HomePage.storyboard */,
 				52A9464224BF5D980050AA0A /* Settings.storyboard */,
@@ -212,8 +230,12 @@
 		5276874324B77CE8006BDE26 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				5222055524D2382300F73916 /* dropdownTableViewCell.swift */,
 				525FFC5424ACE77C00C1E08D /* SignInViewController.swift */,
 				525FFC5124ACE5C600C1E08D /* LoginViewController.swift */,
+				5222054E24D2376E00F73916 /* FinalRegistrationPageViewController.swift */,
+				5222054D24D2376E00F73916 /* InitialRegistrationPageViewController.swift */,
+				5222055724D3477600F73916 /* Test.swift */,
 				525FFC6124AD3EB100C1E08D /* ForgotPasswordViewController.swift */,
 			);
 			path = Authentication;
@@ -250,6 +272,14 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		52821E6724D87B8100961364 /* API Requests */ = {
+			isa = PBXGroup;
+			children = (
+				52821E6824D87B9200961364 /* API Requests.swift */,
+			);
+			path = "API Requests";
+			sourceTree = "<group>";
+		};
 		52A3871E24A65768003C24F3 /* Custom colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +296,8 @@
 		52A3872224A657D7003C24F3 /* Class Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5222055124D2379400F73916 /* Utilities.swift */,
+				52821E6724D87B8100961364 /* API Requests */,
 				524C393A24D0E2FE00D66AFC /* KeyboardHeight */,
 				52291C1624B8BE31004BB24E /* Cell Controllers */,
 				52291C1524B8BE0C004BB24E /* Biometric */,
@@ -396,11 +428,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5222054C24D236F400F73916 /* Bid Pages in Resources */,
 				52A9464324BF5D980050AA0A /* Settings.storyboard in Resources */,
 				52291C1124B8B410004BB24E /* CommunicationPage.storyboard in Resources */,
 				525FFC6024AD04FD00C1E08D /* HomePage.storyboard in Resources */,
 				E85D4B6E249D467100A30864 /* Assets.xcassets in Resources */,
 				525FFC5C24ACEB0B00C1E08D /* ShamitMain.storyboard in Resources */,
+				5222055424D237E800F73916 /* TanayMain.storyboard in Resources */,
 				525FFC4924AC529700C1E08D /* LaunchScreen.storyboard in Resources */,
 				52D1637924C0AED1000A501C /* SettingsImproved.storyboard in Resources */,
 			);
@@ -421,24 +455,30 @@
 				52291C1824B8BE52004BB24E /* CommunicationController.swift in Sources */,
 				52D1637724C0AE94000A501C /* SettingsImproved.swift in Sources */,
 				52A3871D24A6575D003C24F3 /* UIColor Hex to RGB.swift in Sources */,
+				5222055224D2379400F73916 /* Utilities.swift in Sources */,
 				52291C1424B8B48A004BB24E /* CommunicationPage.swift in Sources */,
 				52C907B424B1466B0060DF1B /* HideShowPasswordFix.swift in Sources */,
 				525FFC6624AE2F0F00C1E08D /* SpecificBackgroundColor.swift in Sources */,
 				52C907B924B2419D0060DF1B /* ScrollUpFromKeyboard.swift in Sources */,
 				52C907BD24B62F030060DF1B /* Theme Defaults.swift in Sources */,
+				5222055024D2376E00F73916 /* FinalRegistrationPageViewController.swift in Sources */,
 				5203A30F24BD07A0001D12E9 /* User.swift in Sources */,
 				5276873B24B76539006BDE26 /* BiometricLogin.swift in Sources */,
 				52C907B224B0ED580060DF1B /* UITextFieldButton.swift in Sources */,
+				5222055624D2382300F73916 /* dropdownTableViewCell.swift in Sources */,
 				52C3BB1324A9401600B4D35E /* ThemeProtocol.swift in Sources */,
 				525FFC5724ACE77F00C1E08D /* HomePage.swift in Sources */,
 				525FFC5524ACE77C00C1E08D /* SignInViewController.swift in Sources */,
 				52291C1E24B92312004BB24E /* CommunicationDetails.swift in Sources */,
 				52C3BB1924A941CC00B4D35E /* Theme.swift in Sources */,
 				52C3BB1724A9403600B4D35E /* LightTheme.swift in Sources */,
+				5222054F24D2376E00F73916 /* InitialRegistrationPageViewController.swift in Sources */,
 				52C3BB1524A9402800B4D35E /* DarkTheme.swift in Sources */,
 				5276874E24B7DC8B006BDE26 /* AuthController.swift in Sources */,
 				52547CC524A9792300E3A27E /* ExitKeyboardOnTap.swift in Sources */,
 				E85D4B65249D466F00A30864 /* AppDelegate.swift in Sources */,
+				5222055824D3477600F73916 /* Test.swift in Sources */,
+				52821E6924D87B9200961364 /* API Requests.swift in Sources */,
 				525FFC6424AE207800C1E08D /* AddImageToTextField.swift in Sources */,
 				52C3BB0D24A6AA5100B4D35E /* Single Line (instead of box) Text Field.swift in Sources */,
 				52D7E8A724CF2E5D00F049AB /* Radio Button.swift in Sources */,

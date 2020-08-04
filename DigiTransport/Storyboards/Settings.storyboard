@@ -524,10 +524,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lzr-5m-Uvy">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="240.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="bMW-Jy-Id7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="142.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bMW-Jy-Id7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="267"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Appearance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-3n-y05">
                                                                 <rect key="frame" x="16" y="16" width="382" height="14.5"/>
@@ -536,19 +536,28 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="msz-0h-7Ta">
-                                                                <rect key="frame" x="16" y="48.5" width="382" height="94"/>
+                                                                <rect key="frame" x="16" y="55.5" width="382" height="211.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-Ao-ujO">
-                                                                        <rect key="frame" x="60" y="8" width="120.5" height="78"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-Ao-ujO">
+                                                                        <rect key="frame" x="60" y="8" width="120.5" height="195.5"/>
                                                                         <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DigiTranportMockupWhite" translatesAutoresizingMaskIntoConstraints="NO" id="8yT-kR-viB">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="120"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="120" id="dC3-TP-kMm"/>
+                                                                                </constraints>
+                                                                            </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-m4-xq1">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="135" width="120.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-fW-rja" customClass="RadioButton" customModule="DigiTransport" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="44" width="120.5" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="170.5" width="120.5" height="25"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="25" id="CEa-Em-zOb"/>
+                                                                                </constraints>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
                                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -566,17 +575,20 @@
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6kU-YO-XSq">
-                                                                        <rect key="frame" x="201.5" y="8" width="120.5" height="78"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6kU-YO-XSq">
+                                                                        <rect key="frame" x="201.5" y="8" width="120.5" height="195.5"/>
                                                                         <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DigiTransportMockupBlack" translatesAutoresizingMaskIntoConstraints="NO" id="5pT-C8-jfM">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="120"/>
+                                                                            </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ika-TQ-ye1">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="135" width="120.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nh-AH-89c" customClass="RadioButton" customModule="DigiTransport" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="44" width="120.5" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="170.5" width="120.5" height="25"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
                                                                                         <real key="value" value="1"/>
@@ -595,13 +607,17 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="4nh-AH-89c" firstAttribute="height" secondItem="Dj3-fW-rja" secondAttribute="height" id="CZN-be-kKY"/>
+                                                                    <constraint firstItem="5pT-C8-jfM" firstAttribute="height" secondItem="8yT-kR-viB" secondAttribute="height" id="gNX-mh-oIR"/>
+                                                                </constraints>
                                                                 <edgeInsets key="layoutMargins" top="8" left="60" bottom="8" right="60"/>
                                                             </stackView>
                                                         </subviews>
                                                         <edgeInsets key="layoutMargins" top="16" left="16" bottom="0.0" right="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ci7-sq-rsS">
-                                                        <rect key="frame" x="0.0" y="162.5" width="414" height="78"/>
+                                                        <rect key="frame" x="0.0" y="287" width="414" height="78"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="-49" translatesAutoresizingMaskIntoConstraints="NO" id="YbM-m1-kya">
                                                                 <rect key="frame" x="16" y="8" width="382" height="31"/>
@@ -704,6 +720,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="DigiTransportDark" destination="5pT-C8-jfM" id="3YB-Am-oy6"/>
+                        <outlet property="DigiTransportLight" destination="8yT-kR-viB" id="Z2I-Fy-MCp"/>
                         <outlet property="appearanceLabel" destination="x3b-3n-y05" id="xW4-2n-hiq"/>
                         <outlet property="backgroundView" destination="Bss-HG-Ckz" id="sAT-CN-teH"/>
                         <outlet property="darkButton" destination="4nh-AH-89c" id="H2a-bm-XsV"/>
@@ -723,6 +741,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DigiTranportMockupWhite" width="1125" height="2170"/>
+        <image name="DigiTransportMockupBlack" width="1125" height="2170"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
     </resources>

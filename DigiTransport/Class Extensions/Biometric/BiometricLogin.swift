@@ -10,7 +10,7 @@ import UIKit
 import LocalAuthentication
 
 extension UIViewController {
-    func authenticationWithBiometrics(ViewController: UIViewController) {
+    func authenticationWithBiometrics(ViewController: UIViewController, email: String, password: String) {
     let localAuthenticationContext = LAContext()
     localAuthenticationContext.localizedFallbackTitle = "Please enter your username/password instead"
 
@@ -30,6 +30,7 @@ extension UIViewController {
                     return
                 }
                 print(error)
+                APIRequests.getValidLogin(username: email, password: password)
             
             }
         }
@@ -38,6 +39,7 @@ extension UIViewController {
             return
         }
         print(error)
+        APIRequests.getValidLogin(username: email, password: password)
     }
 }
 }

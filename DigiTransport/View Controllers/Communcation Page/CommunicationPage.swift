@@ -13,6 +13,7 @@ class CommunicationViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var text:String = ""
+    var refresher: UIRefreshControl!
     
     var communicationcells: [Communication] = []
     
@@ -24,7 +25,6 @@ class CommunicationViewController: UIViewController {
     var effectiveTo: [String] = ["Cell5", "Cell2"]
     var downtimeFrom: [String] = ["Cell6", "Cell1"]
     var downtimeTo: [String] = ["Cell7", "Cell"]
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.hidesBottomBarWhenPushed = false
@@ -39,7 +39,13 @@ class CommunicationViewController: UIViewController {
         
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         super.viewWillAppear(animated)
+        self.tableView.tableFooterView = UIView()
         NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
+        refresher = UIRefreshControl()
+        refresher.clipsToBounds = true
+        refresher.addTarget(self, action: #selector(refreshview), for: UIControl.Event.valueChanged)
+        refresher.layer.zPosition = -1
+        tableView.addSubview(refresher)
         self.tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
@@ -50,6 +56,23 @@ class CommunicationViewController: UIViewController {
         
     }
     
+    @objc func refreshview() {
+        communicationType.append("cool")
+        subject.append("cool")
+        partnerType.append("cool")
+        partnerID.append("cool")
+        effectiveFrom.append("cool")
+        effectiveTo.append("cool")
+        downtimeFrom.append("cool")
+        downtimeTo.append("cool")
+        communicationcells = createArray()
+        tableView.reloadData()
+        let when = DispatchTime.now() + 0.5 
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.refresher.endRefreshing()
+        }
+        
+    }
     
     @objc func applyTheme() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {

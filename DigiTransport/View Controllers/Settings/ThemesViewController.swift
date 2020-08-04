@@ -29,12 +29,28 @@ class ThemesViewController: UIViewController {
     
     @IBOutlet var interactiveView: UIScrollView!
     
+    
+    @IBOutlet weak var DigiTransportDark: UIImageView!
+    
+    @IBOutlet weak var DigiTransportLight: UIImageView!
+    
+    var DigiTransportLogos = [UIImageView]()
     let themeOverrideDefaults = UserDefaults.standard
     
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        DigiTransportLogos.append(DigiTransportDark)
+        DigiTransportLogos.append(DigiTransportLight)
+        let DarkGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(darkThemePressed(_:)))
+        DigiTransportDark.isUserInteractionEnabled = true
+        DigiTransportDark.addGestureRecognizer(DarkGestureRecognizer)
+        
+        let LightGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(lightThemePressed(_:)))
+        DigiTransportLight.isUserInteractionEnabled = true
+        DigiTransportLight.addGestureRecognizer(LightGestureRecognizer)
+        
         interactiveView.alwaysBounceVertical = true
         interactiveView.showsHorizontalScrollIndicator = false
         interactiveView.showsVerticalScrollIndicator = false
@@ -57,6 +73,15 @@ class ThemesViewController: UIViewController {
     @objc func applyTheme() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             applyThemeDefault()
+            for i in 0..<self.DigiTransportLogos.count {
+                let imageView = self.DigiTransportLogos[i]
+                imageView.layer.shadowColor = Theme.current.oppositegrays.cgColor
+                imageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+                imageView.layer.shadowOpacity = 1
+                imageView.layer.shadowRadius = 1.0
+                imageView.clipsToBounds = false
+            }
+            
             self.interactiveView.backgroundColor = Theme.current.backgroundColor
             self.spacer.backgroundColor = Theme.current.backgroundColor
             self.backgroundView.backgroundColor = Theme.current.backgroundColor

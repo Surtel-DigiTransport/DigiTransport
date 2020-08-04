@@ -15,6 +15,7 @@ class DarkTheme: ThemeProtocol {
     var textColor: UIColor = UIColor.white
     var accent: UIColor = UIColor.systemGray5
     var grays: UIColor = UIColor.lightGray
+    var oppositegrays: UIColor = UIColor.darkGray
     var grayWhite: UIColor = UIColor.white
     var blackWhite: UIColor  = UIColor.white
     var digitransportLogo: UIImage = UIImage(named: "DigiTransportWhite")!

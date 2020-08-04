@@ -19,5 +19,6 @@ protocol ThemeProtocol {
     var digitransportLogo: UIImage {get}
     var lineaccents: UIColor {get}
     var tabBarColors: UIColor {get}
+    var oppositegrays: UIColor {get}
     
 }

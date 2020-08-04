@@ -75,6 +75,15 @@ class SettingViewController: UIViewController {
     
     @IBAction func logoutCalled(_ sender: Any) {
         try? AuthController.signOut()
+    
+        loginResponseDetails.message = ""
+        loginResponseDetails.status = false
+        loginResponseDetails.isResetFirstPassword = false
+        loginResponseDetails.isFinalRegistrationSubmitted = false
+        loginResponseDetails.finalStatus = ""
+        loginResponseDetails.isAgreementsAccepted = false
+        loginResponseDetails.carrierCountry = ""
+        
         let storyboard = UIStoryboard(name: "ShamitMain", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "LoginVC")
         let seconds = 0.5

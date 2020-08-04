@@ -11,7 +11,6 @@ import UIKit
 extension UIViewController {
     func ScrollUpFromKeyboard(amount: CGFloat) {
         placement.amount = amount
-        print("true" + String(Int(placement.amount)))
     
         
     }
@@ -24,7 +23,6 @@ extension UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-            print(placement.amount)
             if self.view.frame.origin.y == 0 {
                 
                 self.view.frame.origin.y -= 10 + placement.amount
