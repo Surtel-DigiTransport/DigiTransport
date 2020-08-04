@@ -47,6 +47,3 @@ extension UIViewController {
         static var amount: CGFloat = 0.0
     }
 }
-
-
-
