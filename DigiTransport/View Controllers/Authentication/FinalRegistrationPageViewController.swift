@@ -19,7 +19,14 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     var selectedTextField = UITextField()
     var dataSource = [String]()
     var p = CGPoint()
-    var count = 0
+    var countTrailer = 0
+    var countServiceArea = 0
+    var countState = 0
+    var countServiceCategories = 0
+    var trailerArray = [String]()
+    var serviceAreaArray = [String]()
+    var serviceCategoryArray = [String]()
+    var stateArray = [String]()
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var proprietorNameTextField: UITextField!
     @IBOutlet weak var companyRegistrationNumber1TextField: UITextField!
@@ -59,13 +66,33 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         tableView.dataSource = self
         tableView.register(dropdownCell.self, forCellReuseIdentifier: "Cell")
         self.hideKeyboardWhenTappedAround()
+        NotificationCenter.default.addObserver(self,selector: #selector(self.keyboardDidShow(notification:)),
+        name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(self.keyboardDidHide(notification:)),
+        name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    
+    
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+        UIScrollView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.scrollView.contentInset = UIEdgeInsets.zero
+            self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        }, completion: nil)
     }
     
     @objc func removeTransparentView() {
         let frames = selectedTextField.frame
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
             self.transparentView.alpha = 0
-            self.tableView.frame = CGRect(x: 0, y: frames.origin.y, width: frames.width, height: 0)
+            self.tableView.frame = CGRect(x: 0, y: self.p.y, width: frames.width, height: 0)
         }, completion: nil)
     }
     
@@ -75,7 +102,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = paymentAccountTypeTextField
         self.p = self.scrollView.convert(self.paymentAccountTypeTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
         transparentView.addGestureRecognizer(tapGesture)
@@ -87,7 +113,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = trailerTypeTextField
         self.p = self.scrollView.convert(self.trailerTypeTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         self.tableView.isEditing = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
@@ -100,7 +125,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = serviceCategoriesTextField
         self.p = self.scrollView.convert(self.serviceCategoriesTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
         self.tableView.isEditing = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
@@ -113,7 +137,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = serviceAreaTextField
         self.p = self.scrollView.convert(self.serviceAreaTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         self.tableView.isEditing = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
@@ -126,7 +149,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = stateTextField
         self.p = self.scrollView.convert(self.stateTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         self.tableView.isEditing = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
@@ -139,7 +161,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = businessTypeTextField
         p = self.scrollView.convert(self.businessTypeTextField.frame.origin, to: self.view.inputView)
-        self.p.y = self.p.y + 50
         Utilities.addTransparentView( textField: selectedTextField, tableView: tableView, transparentView: transparentView, view: MainView, point: p, height: height)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
         transparentView.addGestureRecognizer(tapGesture)
@@ -154,7 +175,6 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        count = 0
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         cell.textLabel?.text = dataSource[indexPath.row]
@@ -171,13 +191,35 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        if selectedTextField == trailerTypeTextField || selectedTextField == serviceAreaTextField || selectedTextField == serviceCategoriesTextField || selectedTextField == stateTextField {
+        if (selectedTextField == trailerTypeTextField)
+        {
             if cell!.isSelected == true {
-                count += 1
+                countTrailer += 1
+                trailerArray.append(dataSource[indexPath.row])
             }
-            selectedTextField.text =  " \(count) items selected"
-        }
-        else {
+            selectedTextField.text =  " \(countTrailer) items selected"
+        } else if (selectedTextField == serviceAreaTextField)
+        {
+            if cell!.isSelected == true {
+                countServiceArea += 1
+                serviceAreaArray.append(dataSource[indexPath.row])
+            }
+            selectedTextField.text =  " \(countServiceArea) items selected"
+        } else if (selectedTextField == serviceCategoriesTextField)
+        {
+            if cell!.isSelected == true {
+                countServiceCategories += 1
+                serviceCategoryArray.append(dataSource[indexPath.row])
+            }
+            selectedTextField.text =  " \(countServiceCategories) items selected"
+        } else if (selectedTextField == stateTextField)
+        {
+            if cell!.isSelected == true {
+                countState += 1
+                stateArray.append(dataSource[indexPath.row])
+            }
+            selectedTextField.text =  " \(countState) items selected"
+        } else {
             selectedTextField.text = dataSource[indexPath.row]
             removeTransparentView()
         }
@@ -186,10 +228,29 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        count -= 1
-        selectedTextField.text =  " \(count) items selected"
+        if (selectedTextField == trailerTypeTextField)
+        {
+            countTrailer -= 1
+            selectedTextField.text =  " \(countTrailer) items selected"
+            
+        } else if (selectedTextField == serviceAreaTextField)
+        {
+            countServiceArea -= 1
+            selectedTextField.text =  " \(countServiceArea) items selected"
+            
+        } else if (selectedTextField == serviceCategoriesTextField)
+        {
+                countServiceCategories -= 1
+                selectedTextField.text =  " \(countServiceCategories) items selected"
+            
+        } else if (selectedTextField == stateTextField)
+        {
+            countState -= 1
+            selectedTextField.text =  " \(countState) items selected"
+            
+        }
         
-    }
+    }    
     
     
         func setUpElements () {

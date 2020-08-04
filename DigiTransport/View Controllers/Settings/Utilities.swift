@@ -98,9 +98,17 @@ class Utilities {
         tableView.layer.cornerRadius = 5
         tableView.reloadData()
         transparentView.alpha = 0
+        var origin = CGPoint(x: 0, y: 0)
+        if (view.frame.height - point.y < 210 + textField.frame.height) {
+            origin.y = point.y - 210
+            origin.x = point.x
+        } else {
+            origin.y = point.y + textField.frame.height + 10
+            origin.x = point.x
+        }
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut, animations: {
             transparentView.alpha = 0.5
-            tableView.frame = CGRect(origin: point, size: textField.frame.size)
+            tableView.frame = CGRect(origin: origin, size: textField.frame.size)
             tableView.layer.frame.size.height = height
         }, completion: nil)
     }
@@ -114,3 +122,11 @@ class Utilities {
     }
 
 }
+extension String {
+var isValidEmail: Bool {
+   let regularExpressionForEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+//.[A-Za-z]{2,64}"
+   let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
+   return testEmail.evaluate(with: self)
+    }
+}
+
