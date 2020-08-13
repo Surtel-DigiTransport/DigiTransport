@@ -6,13 +6,13 @@
 //  Copyright © 2020 RS Infocon. All rights reserved.
 //
 import UIKit
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
-    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var loginField: FloatingLabel!
 
     @IBOutlet weak var backgroundImage: UIImageView!
     
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var passwordField: FloatingLabel!
 
     @IBOutlet weak var loginButton: UIButton!
     
@@ -40,28 +40,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var loginbuttonPressed  = false
     
-    override func viewDidLoad() {
-        setScrollUpFromKeyboardtoTrue()
-    }
-    var keyboardHeight: CGFloat = 0.0
+
     
+
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == self.navigationController?.interactivePopGestureRecognizer {
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    var keyboardHeight: CGFloat = 0.0
+    var realOrigin: CGPoint = CGPoint(x: 0, y: 0)
     override func viewWillAppear(_ animated: Bool) {
         keyboardHeight = KeyboardService.keyboardHeight()
+        realOrigin = buttonView.convert(loginButton.frame.origin, to: self.view)
+        setScrollUpFromKeyboardtoTrue(object: loginButton, keyboardHeight: keyboardHeight, realOrigin: realOrigin)
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        
+        forgotPassword.isEnabled = true
+        self.hidesBottomBarWhenPushed = true
         loginbuttonPressed = false
         super.viewWillAppear(animated)
-        keyboardscroll()
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
         applyThemeDefault()
         passwordField.showhidepasswordbutton()
         self.hideKeyboardWhenTappedAround()
         
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        
+
         loginField.delegate = self
         loginField.tag = 0
 
@@ -75,8 +89,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         backButton.isEnabled = true
 
 //      SETTING BOTTOM LINE (INSTEAD OF BOX) FOR UITEXTFIELD
-        loginField.setBottomBorder(color: UIColor.systemGray2)
-        passwordField.setBottomBorder(color: UIColor.systemGray2)
+//        loginField.setBottomBorder(color: Theme.current.grays)
+//        passwordField.setBottomBorder(color: Theme.current.grays)
 
 
 //      ADDING IMAGES TO FIELDS
@@ -106,21 +120,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 if loginResponseDetails.status == true {
                     if getFaceIDDefaults() {
-                    let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
-                    let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
-                        authenticationWithBiometrics(ViewController: secondVC, email: email, password: currentpassword)
+                    authenticationWithBiometrics(email: email, password: currentpassword)
                     } else {
-                        let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
-                        let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
-                        self.navigationController?.pushViewController(secondVC, animated: true)
-                        
+                        loginStatusController()
                     }
                 }
             }
         }
 
     }
+    
+    
 
+    override func viewWillLayoutSubviews() {
+        setScrollUpFromKeyboardtoTrue(object: loginButton, keyboardHeight: keyboardHeight, realOrigin: realOrigin)
+    }
     
     @objc func textFieldDidChange(textfield: UITextField) {
         if !(loginField.text == loginAttemptDetails.username) || !(passwordField.text == loginAttemptDetails.password) {
@@ -136,27 +150,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
     }
-    var realOrigin: CGPoint = CGPoint(x: 0,y: 0)
-    var buttonHeight: CGFloat = 0.0
     
-    override func viewWillLayoutSubviews() {
-        keyboardscroll()
     
-    }
-    
-    var counter = 0
-    func keyboardscroll() {
-        
-        realOrigin = buttonView.convert(loginButton.frame.origin, to: self.view)
-        buttonHeight = view.frame.size.height - (loginButton.frame.size.height + realOrigin.y)
-         if keyboardHeight > buttonHeight {
-             self.ScrollUpFromKeyboard(amount: keyboardHeight - buttonHeight)
-         } else {
-              self.ScrollUpFromKeyboard(amount: -10)
-              
-         }
-        counter += 1
-    }
   
 
     struct myImages {
@@ -166,27 +161,49 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    @objc func applyTheme() {
-         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.backgroundView.backgroundColor = Theme.current.backgroundColor
-            self.topSpacer.alpha = 0.0
-            self.bottomSpacer.backgroundColor = Theme.current.backgroundColor
-            self.forgotPassword.backgroundColor = Theme.current.backgroundColor
-            self.loginField.backgroundColor = Theme.current.backgroundColor
-            self.passwordField.backgroundColor = Theme.current.backgroundColor
-            self.poweredBy.backgroundColor = Theme.current.backgroundColor
-            self.agreementPolicy.backgroundColor = Theme.current.backgroundColor
-            self.forgotPassword.setTitleColor(Theme.current.grays, for:.normal)
-            self.loginField.textColor = Theme.current.textColor
-            self.passwordField.textColor = Theme.current.textColor
-            self.poweredBy.textColor = Theme.current.grays
-            self.agreementPolicy.textColor = Theme.current.grayWhite
-            self.loginField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
-            self.passwordField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
-            self.backgroundImage.image = Theme.current.digitransportLogo
-        }
+    func applyTheme() {
+        print("ok")
+        self.backgroundView.backgroundColor = Theme.current.backgroundColor
+        self.topSpacer.alpha = 0.0
+        self.bottomSpacer.backgroundColor = Theme.current.backgroundColor
+        self.forgotPassword.backgroundColor = Theme.current.backgroundColor
+        self.loginField.backgroundColor = Theme.current.backgroundColor
+        self.passwordField.backgroundColor = Theme.current.backgroundColor
+        self.poweredBy.backgroundColor = Theme.current.backgroundColor
+        self.agreementPolicy.backgroundColor = Theme.current.backgroundColor
+        self.forgotPassword.setTitleColor(Theme.current.grays, for:.normal)
+        self.loginField.textColor = Theme.current.textColor
+        self.passwordField.textColor = Theme.current.textColor
+        self.poweredBy.textColor = Theme.current.grays
+        self.agreementPolicy.textColor = Theme.current.grayWhite
+        self.loginField.floatingLabelBackground = Theme.current.backgroundColor
+        self.passwordField.floatingLabelBackground = Theme.current.backgroundColor
+        self.loginField.floatingLabelColor = Theme.current.grays
+        self.passwordField.floatingLabelColor = Theme.current.grays
+        self.loginField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
+        self.passwordField.setValue(Theme.current.grays, forKeyPath: "placeholderLabel.textColor")
+        self.backgroundImage.image = Theme.current.digitransportLogo
+        
     }
-
+    
+    func loginStatusController() {
+        
+        if loginResponseDetails.isFinalRegistrationSubmitted == false {
+            
+            let storyboard = UIStoryboard(name: "TanayMain", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(identifier: "FinalRegistrationVC")
+            loginbuttonPressed = true
+            self.hidesBottomBarWhenPushed = false
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+            loginbuttonPressed = true
+            self.hidesBottomBarWhenPushed = false
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }
+        
+    }
 
         
         
@@ -199,6 +216,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 
     func loginPressed() {
+        forgotPassword.isEnabled = false
         guard let email = loginField.text, email.count > 0 else {
             return
         }
@@ -224,20 +242,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if loginResponseDetails.status == true {
             do {
                 try AuthController.signIn(user, password: password)
+                loginStatusController()
                 
-                let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
-                let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
-                loginbuttonPressed = true
-                self.navigationController?.pushViewController(secondVC, animated: true)
             } catch {
                 print("Error signing in: \(error.localizedDescription)")
             }
         } else {
+            forgotPassword.isEnabled = true
             errorLabel.alpha = 1.0
             loginField.isEnabled = true
             passwordField.isEnabled = true
             loginButton.isEnabled = true
             backButton.isEnabled = true
+//            passwordField.displayErrorMessage(message: "test")
         }
     }
     
@@ -276,6 +293,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 
 struct loginResponseDetails {
+    static var username: String = Settings.currentUser!.email
+    static var token: String = ""
     static var message: String = ""
     static var status: Bool = false
     static var isResetFirstPassword: Bool = false
@@ -283,7 +302,6 @@ struct loginResponseDetails {
     static var finalStatus: String = ""
     static var isAgreementsAccepted: Bool = false
     static var carrierCountry: String = ""
-    
     
 }
 
