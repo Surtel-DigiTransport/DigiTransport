@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Light Theme: Can add more variables (colors, images, etc) based on what you want for whatever theme color. These are the base ones colors throughout the app, as they dynamically adapt to the theme
 class LightTheme: ThemeProtocol {
     var altbackgroundColor: UIColor = UIColor.custom.background.lightpink
     var backgroundColor: UIColor = UIColor.white

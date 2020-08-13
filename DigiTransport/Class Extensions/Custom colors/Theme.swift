@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Controls the Theme Protocol
 class Theme {
     static var current: ThemeProtocol = LightTheme()
 }

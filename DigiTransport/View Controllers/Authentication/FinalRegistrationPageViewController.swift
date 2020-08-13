@@ -59,6 +59,138 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hideKeyboardWhenTappedAround()
+        APIRequests.setFinalRegistrationDetails()
+        
+        
+        proprietorNameTextField.text = APIRequests.finalRegistrationDetailResponse.ProprietorName
+        companyRegistrationNumber1TextField.text = APIRequests.finalRegistrationDetailResponse.CompanyRegistrationNumber_Text1
+        companyRegistrationNumber2TextField.text = APIRequests.finalRegistrationDetailResponse.CompanyRegistrationNumber_Text2
+        companyRegistrationNumber3TextField.isHidden = true
+        companyRegistrationNumber4TextField.isHidden = true
+        taxType1TextField.text = APIRequests.finalRegistrationDetailResponse.TaxType1
+        taxNumber1TextField.text = APIRequests.finalRegistrationDetailResponse.TaxNumber1
+        taxType2TextField.text = APIRequests.finalRegistrationDetailResponse.TaxType2
+        taxNumber2TextField.text = APIRequests.finalRegistrationDetailResponse.TaxNumber2
+        taxType3TextField.text = APIRequests.finalRegistrationDetailResponse.TaxType3
+        taxNumber3TextField.text = APIRequests.finalRegistrationDetailResponse.TaxNumber3
+        taxType3TextField.text = APIRequests.finalRegistrationDetailResponse.TaxType4
+        taxNumber4TextField.text = APIRequests.finalRegistrationDetailResponse.TaxNumber4
+        taxType5TextField.isHidden = true
+        taxNumber5TextField.isHidden = true
+        bankAccountNumberTextField.text = APIRequests.finalRegistrationDetailResponse.BankAccountNumber
+        bankNameTextField.text = APIRequests.finalRegistrationDetailResponse.BankBranchName
+        bankBranchNameTextField.text = APIRequests.finalRegistrationDetailResponse.BankBranchName
+        bankIFSCCodeTextField.text = APIRequests.finalRegistrationDetailResponse.BankIFSCCode
+        thirdPartyPaymentInformation1TextField.text = APIRequests.finalRegistrationDetailResponse.ThirdPartyPaymentInformation1
+        thirdPartyPaymentInformation2TextField.text = APIRequests.finalRegistrationDetailResponse.ThirdPartyPaymentInformation2
+        thirdPartyPaymentInformation3TextField.text = APIRequests.finalRegistrationDetailResponse.ThirdPartyPaymentInformation3
+        thirdPartyPaymentInformation4TextField.text = APIRequests.finalRegistrationDetailResponse.ThirdPartyPaymentInformation4
+        
+        let delete = [[taxType1TextField, taxType2TextField, taxType3TextField, taxType4TextField], [taxNumber1TextField, taxNumber2TextField, taxNumber3TextField, taxNumber4TextField]]
+        
+        for i in 0..<delete[0].count{
+            if delete[0][i]?.text == "" {
+                delete[0][i]?.isHidden = true
+                delete[1][i]?.isHidden = true
+            }
+        }
+        
+        applyTheme()
+        
+        
+        
+        //        companyRegistrationNumber1TextField.text
+        //        companyRegistrationNumber2TextField.text
+        //        companyRegistrationNumber3TextField.text
+        //        companyRegistrationNumber4TextField.text
+        //        taxType1TextField.text
+        //        taxNumber1TextField.text
+        //        taxType2TextField.text
+        //        taxNumber2TextField.text
+        //        taxType3TextField.text
+        //        taxNumber3TextField.text
+        //        taxType4TextField.text
+        //        taxNumber4TextField.text
+        //        taxType5TextField.text
+        //        taxNumber5TextField.text
+        //        paymentAccountTypeTextField.text
+        //        bankAccountNumberTextField.text
+        //        bankNameTextField.text
+        //        bankBranchNameTextField.text
+        //        bankIFSCCodeTextField.text
+        //        thirdPartyPaymentInformation1TextField.text
+        //        thirdPartyPaymentInformation2TextField.text
+        //        thirdPartyPaymentInformation3TextField.text
+        //        thirdPartyPaymentInformation4TextField.text
+//        trailerTypeTextField
+//        serviceCategoriesTextField
+//        serviceAreaTextField
+//        businessTypeTextField
+//        stateTextField
+//        "CarrierID",
+//        "CarrierCompanyName",
+//        "ProprietorName",
+//        "PrimaryContactPersonMobileNumber",
+//        "CarrierCompanyPhoneNumber",
+//        "PANNumber",
+//        "BankAccountNumber",
+//        "BankIFSCCode",
+//        "BankName",
+//        "BankBranchName",
+//        "PrimaryContactEmail",
+//        "AddressLine1",
+//        "AddressLine2",
+//        "ZipCode",
+//        "CountryCode",
+//        "CityName",
+//        "StateName",
+//        "BusinessTypeID",
+//        "CarrierUserName",
+//        "CarrierCompanyFaxNumber",
+//        "PrimaryContactPersonName",
+//        "PrimaryContactPersonPhoneNumber",
+//        "CompanyRegistrationNumber_Text1",
+//        "CompanyRegistrationNumber_Value1",
+//        "CompanyRegistrationNumber_Text2",
+//        "CompanyRegistrationNumber_Value2",
+//        "TaxType1",
+//        "TaxNumber1",
+//        "TaxType2",
+//        "TaxNumber2",
+//        "TaxType3",
+//        "TaxNumber3",
+//        "TaxType4",
+//        "TaxNumber4",
+//        "PaymentAccountType",
+//        "PaymentTypes",
+//        "ThirdPartyPaymentInformation1",
+//        "ThirdPartyPaymentInformation2",
+//        "ThirdPartyPaymentInformation3",
+//        "ThirdPartyPaymentInformation4",
+//        "ServiceCategoriesCSV",
+//        "ServiceCategory_Other",
+//        "TrailerTypesCSV",
+//        "TrailerType_Other",
+//        "ServiceAreas_NationWide",
+//        "ServiceAreas_SpecificArea",
+//        "DeliverToCitiesCSV",
+//        "DeliverToStatesCSV",
+//        "CallType"
+        
+        
+        
+    }
+    
+    
+    
+    func applyTheme() {
+        scrollView.backgroundColor = .clear
+        view.backgroundColor = Theme.current.backgroundColor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
@@ -70,6 +202,7 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(self.keyboardDidHide(notification:)),
         name: UIResponder.keyboardDidHideNotification, object: nil)
+        
     }
     
     
@@ -97,6 +230,7 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     }
     
     @IBAction func OnClickPaymentAccountType(_ sender: Any) {
+//        APIRequests.finalRegistrationDetailResponse.
         dataSource = [ "Australia","India", "United States"]
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
@@ -108,7 +242,11 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     }
     
     @IBAction func OnClickTrailerType(_ sender: Any) {
-        dataSource = [ "Australia", "India", "United States", "Australia", "India", "United States", "Australia", "India", "United States"]
+        dataSource.removeAll()
+        for i in 0..<APIRequests.finalRegistrationDetailResponse.TrailerTypeList.count {
+            dataSource.append((APIRequests.finalRegistrationDetailResponse.TrailerTypeList[i] as! NSDictionary)["TrailerTypeName"] as? String ?? "Error loading selection list")
+        }
+        
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = trailerTypeTextField
@@ -120,7 +258,10 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         transparentView.addGestureRecognizer(tapGesture)
     }
     @IBAction func OnClickServiceCategories(_ sender: Any) {
-        dataSource = [ "Australia", "India", "United States", "Australia", "India", "United States", "Australia", "India", "United States"]
+        dataSource.removeAll()
+        for i in 0..<APIRequests.finalRegistrationDetailResponse.ServiceCategoryList.count {
+            dataSource.append((APIRequests.finalRegistrationDetailResponse.ServiceCategoryList[i] as! NSDictionary)["ServiceCategoryName"] as? String ?? "Error loading selection")
+        }
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = serviceCategoriesTextField
@@ -132,7 +273,10 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         transparentView.addGestureRecognizer(tapGesture)
     }
     @IBAction func OnClickServiceArea(_ sender: Any) {
-        dataSource = [ "Australia", "India", "United States", "Australia", "India", "United States", "Australia", "India", "United States"]
+        dataSource.removeAll()
+        for i in 0..<APIRequests.finalRegistrationDetailResponse.StateList.count {
+            dataSource.append(APIRequests.finalRegistrationDetailResponse.StateList[i] as? String ?? "Error loading selection")
+        }
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = serviceAreaTextField
@@ -144,7 +288,10 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         transparentView.addGestureRecognizer(tapGesture)
     }
     @IBAction func OnClickState(_ sender: Any) {
-        dataSource = [ "Australia", "India", "United States", "Australia", "India", "United States", "Australia", "India", "United States"]
+        dataSource.removeAll()
+        for i in 0..<APIRequests.finalRegistrationDetailResponse.StateList.count {
+            dataSource.append(APIRequests.finalRegistrationDetailResponse.StateList[i] as? String ?? "Error loading selection")
+        }
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = stateTextField
@@ -156,7 +303,10 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
         transparentView.addGestureRecognizer(tapGesture)
     }
     @IBAction func OnClickBusiness(_ sender: Any) {
-        dataSource = [ "Australia", "India", "United States", "Australia", "India", "United States", "Australia", "India", "United States"]
+        dataSource.removeAll()
+        for i in 0..<APIRequests.finalRegistrationDetailResponse.BusinessTypeList.count {
+            dataSource.append((APIRequests.finalRegistrationDetailResponse.BusinessTypeList[i] as! NSDictionary)["BusinessTypeName"] as? String ?? "Error loading selection")
+        }
         var height: CGFloat
         if dataSource.count < 4 { height = CGFloat(dataSource.count * 50) } else { height = 200}
         selectedTextField = businessTypeTextField
@@ -254,30 +404,30 @@ class FinalRegistrationPageViewController: UIViewController, UITableViewDelegate
     
     
         func setUpElements () {
-        Utilities.standardTextField(textfield: proprietorNameTextField)
-        Utilities.standardTextField(textfield: companyRegistrationNumber1TextField)
-        Utilities.standardTextField(textfield: companyRegistrationNumber2TextField)
-        Utilities.standardTextField(textfield: companyRegistrationNumber3TextField)
-        Utilities.standardTextField(textfield: companyRegistrationNumber4TextField)
-        Utilities.standardTextField(textfield: taxType1TextField)
-        Utilities.standardTextField(textfield: taxNumber1TextField)
-        Utilities.standardTextField(textfield: taxType2TextField)
-        Utilities.standardTextField(textfield: taxNumber2TextField)
-        Utilities.standardTextField(textfield: taxType3TextField)
-        Utilities.standardTextField(textfield: taxNumber3TextField)
-        Utilities.standardTextField(textfield: taxType4TextField)
-        Utilities.standardTextField(textfield: taxNumber4TextField)
-        Utilities.standardTextField(textfield: taxType5TextField)
-        Utilities.standardTextField(textfield: taxNumber5TextField)
+//        Utilities.standardTextField(textfield: proprietorNameTextField)
+//        Utilities.standardTextField(textfield: companyRegistrationNumber1TextField)
+//        Utilities.standardTextField(textfield: companyRegistrationNumber2TextField)
+//        Utilities.standardTextField(textfield: companyRegistrationNumber3TextField)
+//        Utilities.standardTextField(textfield: companyRegistrationNumber4TextField)
+//        Utilities.standardTextField(textfield: taxType1TextField)
+//        Utilities.standardTextField(textfield: taxNumber1TextField)
+//        Utilities.standardTextField(textfield: taxType2TextField)
+//        Utilities.standardTextField(textfield: taxNumber2TextField)
+//        Utilities.standardTextField(textfield: taxType3TextField)
+//        Utilities.standardTextField(textfield: taxNumber3TextField)
+//        Utilities.standardTextField(textfield: taxType4TextField)
+//        Utilities.standardTextField(textfield: taxNumber4TextField)
+//        Utilities.standardTextField(textfield: taxType5TextField)
+//        Utilities.standardTextField(textfield: taxNumber5TextField)
         Utilities.standardTextField(textfield: paymentAccountTypeTextField)
-        Utilities.standardTextField(textfield: bankAccountNumberTextField)
-        Utilities.standardTextField(textfield: bankNameTextField)
-        Utilities.standardTextField(textfield: bankBranchNameTextField)
-        Utilities.standardTextField(textfield: bankIFSCCodeTextField)
-        Utilities.standardTextField(textfield: thirdPartyPaymentInformation1TextField)
-        Utilities.standardTextField(textfield: thirdPartyPaymentInformation2TextField)
-        Utilities.standardTextField(textfield: thirdPartyPaymentInformation3TextField)
-        Utilities.standardTextField(textfield: thirdPartyPaymentInformation4TextField)
+//        Utilities.standardTextField(textfield: bankAccountNumberTextField)
+//        Utilities.standardTextField(textfield: bankNameTextField)
+//        Utilities.standardTextField(textfield: bankBranchNameTextField)
+//        Utilities.standardTextField(textfield: bankIFSCCodeTextField)
+//        Utilities.standardTextField(textfield: thirdPartyPaymentInformation1TextField)
+//        Utilities.standardTextField(textfield: thirdPartyPaymentInformation2TextField)
+//        Utilities.standardTextField(textfield: thirdPartyPaymentInformation3TextField)
+//        Utilities.standardTextField(textfield: thirdPartyPaymentInformation4TextField)
         Utilities.standardTextField(textfield: trailerTypeTextField)
         Utilities.standardTextField(textfield: serviceCategoriesTextField)
         Utilities.standardTextField(textfield: serviceAreaTextField)

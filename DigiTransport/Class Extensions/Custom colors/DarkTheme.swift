@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// Dark Theme: Can add more variables (colors, images, etc) based on what you want for whatever theme color. These are the base ones colors throughout the app, as they dynamically adapt to the theme
 class DarkTheme: ThemeProtocol {
     var altbackgroundColor: UIColor = UIColor.custom.gray.darkgray
     var backgroundColor: UIColor = UIColor.custom.background.darkgrey
@@ -21,5 +21,6 @@ class DarkTheme: ThemeProtocol {
     var digitransportLogo: UIImage = UIImage(named: "DigiTransportWhite")!
     var lineaccents: UIColor = UIColor.lightGray.withAlphaComponent(0.3)
     var tabBarColors: UIColor = UIColor.custom.gray.offdarkgray
+ 
     
 }

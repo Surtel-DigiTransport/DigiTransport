@@ -569,9 +569,6 @@
                                                                                         <real key="value" value="1"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
-                                                                                <connections>
-                                                                                    <action selector="lightThemePressed:" destination="3mu-hM-LLS" eventType="touchUpInside" id="xOz-tE-IxO"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
@@ -600,9 +597,6 @@
                                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
-                                                                                <connections>
-                                                                                    <action selector="darkThemePressed:" destination="3mu-hM-LLS" eventType="touchUpInside" id="S4V-PP-bk7"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
@@ -692,7 +686,6 @@
                                 <constraints>
                                     <constraint firstItem="b9R-jK-zbR" firstAttribute="top" secondItem="gdc-w8-jFJ" secondAttribute="top" id="6G5-BL-MIM"/>
                                     <constraint firstItem="b9R-jK-zbR" firstAttribute="bottom" secondItem="Y0W-tJ-BD0" secondAttribute="bottom" id="EFc-ca-lyV"/>
-                                    <constraint firstItem="b9R-jK-zbR" firstAttribute="centerY" secondItem="sBd-Xh-wBr" secondAttribute="centerY" id="FOb-CP-pPK"/>
                                     <constraint firstItem="Y0W-tJ-BD0" firstAttribute="trailing" secondItem="b9R-jK-zbR" secondAttribute="trailing" id="LpT-Ii-bbr"/>
                                     <constraint firstItem="b9R-jK-zbR" firstAttribute="leading" secondItem="Y0W-tJ-BD0" secondAttribute="leading" id="ihs-Iv-YU8"/>
                                 </constraints>

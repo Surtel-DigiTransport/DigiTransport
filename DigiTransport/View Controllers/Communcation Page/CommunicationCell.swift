@@ -39,7 +39,10 @@ class CommunicationCell: UITableViewCell {
             self.effectiveTo.textColor = Theme.current.textColor
             self.downtimeFrom.textColor = Theme.current.textColor
             self.downtimeTo.textColor = Theme.current.textColor
-        
+            for i in 0..<self.collectionOfCommunicationLabels.count{
+                self.collectionOfCommunicationLabels[i].textColor = Theme.current.textColor
+            }
+            
 //        backgroundButton.backgroundColor = Theme.current.backgroundColor
         }
     }

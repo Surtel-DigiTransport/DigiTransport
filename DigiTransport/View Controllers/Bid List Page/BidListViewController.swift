@@ -27,7 +27,7 @@ class BidListViewController: UIViewController, UITableViewDelegate, UITableViewD
            5
        }
        
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "bidCell", for: indexPath) as! BidCell
            cell.bidID.text = "BidID"
            cell.bidTItle.text = "Bid Title"

@@ -15,10 +15,10 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoutButton: UIButton!
     
-    
     var settingsCells: [SettingsController] = []
     
     var settingsValues: [String] = ["Themes", "Security"]
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -33,29 +33,33 @@ class SettingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
+
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.applyTheme), name: UIApplication.willEnterForegroundNotification, object: nil)
         self.tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
-        UITabBar.appearance().barTintColor = Theme.current.tabBarColors
+//        UITabBar.appearance().barTintColor = Theme.current.tabBarColors
         applyTheme()
-        settingsCells = createArray()
-        
+        settingsCells = createArray()        
     }
     
     
     @objc func applyTheme() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-        applyThemeDefault()
+            applyThemeDefault()
             self.tableView.backgroundColor = Theme.current.backgroundColor
             self.backgroundView.backgroundColor = Theme.current.backgroundColor
             self.logoutButton.setTitleColor(Theme.current.grays, for: .normal)
-            UITabBar.appearance().barTintColor = Theme.current.tabBarColors
+            self.tabBarController?.tabBar.barTintColor = Theme.current.tabBarColors
             self.tableView.reloadData()
         }
+        
+        
+        
+        
+        
     }
-    
     
     func createArray() -> [SettingsController] {
         var tempcell: [SettingsController] = []
@@ -86,9 +90,9 @@ class SettingViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "ShamitMain", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "LoginVC")
-        let seconds = 0.5
+        let seconds = 1.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-        self.hidesBottomBarWhenPushed = true
+            self.hidesBottomBarWhenPushed = true
         }
         self.navigationController?.pushViewController(secondVC, animated: true)
     }

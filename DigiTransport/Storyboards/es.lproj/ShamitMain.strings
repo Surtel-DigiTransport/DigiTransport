@@ -1,0 +1,48 @@
+/* Class = "UITextField"; placeholder = "Enter registered use id*"; ObjectID = "5rT-pd-KpL"; */
+"5rT-pd-KpL.placeholder" = "Enter registered user id* (IN SPANISH)";
+
+/* Class = "UILabel"; text = "Invalid Login Credentials!"; ObjectID = "ahj-6b-XKx"; */
+"ahj-6b-XKx.text" = "Invalid Login Credentials! (IN SPANISH)";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "aLw-Cr-oU3"; */
+"aLw-Cr-oU3.placeholder" = "Password (IN SPANISH)";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "Cif-nD-LzL"; */
+"Cif-nD-LzL.normalTitle" = "Reset Password (IN SPANISH)";
+
+/* Class = "UITextField"; placeholder = "Enter registered use id*"; ObjectID = "dgA-t3-eZB"; */
+"dgA-t3-eZB.placeholder" = "Enter registered user id* (IN SPANISH)";
+
+/* Class = "UILabel"; text = "Powered by R S InfoCon"; ObjectID = "GcF-jH-tEn"; */
+"GcF-jH-tEn.text" = "Powered by R S InfoCon (IN SPANISH)";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "I7X-cD-CRX"; */
+"I7X-cD-CRX.title" = "Login (IN SPANISH)";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Igl-xE-J1Q"; */
+"Igl-xE-J1Q.title" = "Item (IN SPANISH)";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "l9J-sM-NGi"; */
+"l9J-sM-NGi.normalTitle" = "Forgot Password? (IN SPANISH)";
+
+/* Class = "UINavigationItem"; title = "Forgot Password"; ObjectID = "NIe-rs-DOP"; */
+"NIe-rs-DOP.title" = " Forgot Password (IN SPANISH)";
+
+/* Class = "UILabel"; text = "Enter your User ID to receive a code to reset your password."; ObjectID = "t0m-vq-Hwg"; */
+"t0m-vq-Hwg.text" = "Enter your User ID to receive a code to reset your password. (IN SPANISH)";
+
+/* Class = "UILabel"; text = "I agree and accept DigiTransport Agreement, Private Policy, and Terms of Use "; ObjectID = "tcM-ay-hl4"; */
+"tcM-ay-hl4.text" = "I agree and accept DigiTransport Agreement, Private Policy, and Terms of Use (IN SPANISH)";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "Vg9-YJ-Tq0"; */
+"Vg9-YJ-Tq0.normalTitle" = "Log In (IN SPANISH)";
+
+/* Class = "UITextField"; placeholder = "Career UserID"; ObjectID = "VRz-GX-JHh"; */
+"VRz-GX-JHh.placeholder" = "Career UserID (IN SPANISH)";
+
+/* Class = "UIButton"; normalTitle = "Resend Code"; ObjectID = "yLW-bc-eni"; */
+"yLW-bc-eni.normalTitle" = "Resend Code (IN SPANISH)";
+
+/* Class = "UIButton"; normalTitle = "Back to Login Screen"; ObjectID = "yM6-en-xsX"; */
+"yM6-en-xsX.normalTitle" = "Back to Login Screen (IN SPANISH)";
+

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextField {
-    func showhidepasswordbutton(image: UIImage = UIImage(systemName: "eye.slash")!) {
+    func showhidepasswordbutton(image: UIImage = UIImage(systemName: "eye")!) {
         let button = UIButton(type: .custom)
         button.setImage(image, for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
@@ -27,12 +27,12 @@ extension UITextField {
         if self.isSecureTextEntry == true {
             self.becomeFirstResponder()
             self.togglePasswordVisibility()
-            showhidepasswordbutton(image: UIImage(systemName: "eye")!)
+            showhidepasswordbutton(image: UIImage(systemName: "eye.slash")!)
             
         } else if self.isSecureTextEntry == false {
             self.becomeFirstResponder()
             self.togglePasswordVisibility()
-            showhidepasswordbutton(image: UIImage(systemName: "eye.slash")!)
+            showhidepasswordbutton(image: UIImage(systemName: "eye")!)
             
         }
         

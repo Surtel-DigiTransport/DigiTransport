@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PasswordTextField: UITextField {
+class PasswordTextField: FloatingLabel {
 
     override var isSecureTextEntry: Bool {
         didSet {

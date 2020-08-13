@@ -10,7 +10,7 @@ import UIKit
 import LocalAuthentication
 
 extension UIViewController {
-    func authenticationWithBiometrics(ViewController: UIViewController, email: String, password: String) {
+    func authenticationWithBiometrics(email: String, password: String) {
     let localAuthenticationContext = LAContext()
     localAuthenticationContext.localizedFallbackTitle = "Please enter your username/password instead"
 
@@ -21,7 +21,21 @@ extension UIViewController {
         localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, evaluateError in
             if success {
                 DispatchQueue.main.async() {
-                    self.navigationController?.pushViewController(ViewController, animated: true)
+                    self.navigationController?.setNavigationBarHidden(self.navigationController?.isNavigationBarHidden == false, animated: true)
+                    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                    if loginResponseDetails.isFinalRegistrationSubmitted == false {
+
+                        
+                        let storyboard = UIStoryboard(name: "TanayMain", bundle: nil)
+                        let secondVC = storyboard.instantiateViewController(identifier: "FinalRegistrationVC")
+                        self.hidesBottomBarWhenPushed = false
+                        self.navigationController?.pushViewController(secondVC, animated: true)
+                    } else {
+                        let storyboard = UIStoryboard(name: "HomePage", bundle: nil)
+                        let secondVC = storyboard.instantiateViewController(identifier: "HomePageVC")
+                        self.hidesBottomBarWhenPushed = false
+                        self.navigationController?.pushViewController(secondVC, animated: true)
+                    }
                 }
                 
             } else {

@@ -29,10 +29,20 @@ class HomePageTabBar: UITabBarController {
             fatalError("Could not load communicationTabIcon image!")
         }
         tab2VC.tabBarItem = UITabBarItem(title: "Communication", image: tab2Icon, selectedImage: tab2Icon)
+        
+        sb = UIStoryboard(name: "BidLists", bundle: nil)
+        guard let tab3VC = sb.instantiateInitialViewController() else {
+            fatalError("Could not load Bids VC!")
+        }
+        
+        guard let tab3Icon = UIImage(named: "bids") else {
+            fatalError("Could not load Bids image!")
+        }
+        tab3VC.tabBarItem = UITabBarItem(title: "Bids", image: tab3Icon, selectedImage: tab3Icon)
 
         // etc for your other 3 tabs
         
-        let viewControllerList = [ tab1VC, tab2VC ]
+        let viewControllerList = [ tab1VC, tab2VC, tab3VC ]
         viewControllers = viewControllerList
         
     }

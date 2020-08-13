@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Protocol For Themes: Switches between different themes based on what is chose in Theme.swift or what the variable Theme.current is set to
 protocol ThemeProtocol {
     var backgroundColor: UIColor {get}
     var altbackgroundColor: UIColor {get}

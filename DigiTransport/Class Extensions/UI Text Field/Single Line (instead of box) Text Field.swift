@@ -12,14 +12,17 @@ import UIKit
 
 
 extension UITextField {
-    func setBottomBorder(color: UIColor) {
-    self.borderStyle = .none
-    self.layer.backgroundColor = color.cgColor
-
-    self.layer.masksToBounds = false
-    self.layer.shadowColor = color.cgColor
-    self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-    self.layer.shadowOpacity = 1.0
-    self.layer.shadowRadius = 0.0
+    func setBottomBorder(color: UIColor, offset: CGFloat = 40) {
+        self.borderStyle = .none
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - offset, height: 1)
+//        border.bounds = CGRect(x: 0, y: 0, width:  self.frame.size.width, height: 1)
+        
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        
+        
   }
 }

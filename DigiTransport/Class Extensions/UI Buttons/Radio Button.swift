@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Creates Radio Button look
 @IBDesignable
 public class RadioButton: UIButton {
 

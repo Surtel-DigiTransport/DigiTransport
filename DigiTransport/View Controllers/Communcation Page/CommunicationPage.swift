@@ -76,9 +76,10 @@ class CommunicationViewController: UIViewController {
     
     @objc func applyTheme() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-        applyThemeDefault()
+            applyThemeDefault()
             self.tableView.backgroundColor = Theme.current.backgroundColor
             self.backgroundView.backgroundColor = Theme.current.backgroundColor
+            self.tabBarController?.tabBar.barTintColor = Theme.current.tabBarColors
             self.tableView.reloadData()
         }
     }

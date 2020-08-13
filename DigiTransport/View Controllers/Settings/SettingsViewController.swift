@@ -44,7 +44,6 @@ class SettingsViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func applyTheme() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
         applyThemeDefault()
-        UITabBar.appearance().barTintColor = Theme.current.tabBarColors
             self.backgroundView.backgroundColor = Theme.current.backgroundColor
             self.logoutButton.setTitleColor(Theme.current.grays, for:.normal)
         for i in 0..<self.collectionOfLabels.count {
@@ -57,7 +56,7 @@ class SettingsViewController: UIViewController, UIGestureRecognizerDelegate {
             self.collectionOfArrows[i].tintColor = Theme.current.textColor
         }
         }
-    
+       
     }
     
     
